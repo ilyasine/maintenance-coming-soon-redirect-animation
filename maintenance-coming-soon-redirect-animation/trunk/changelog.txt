@@ -1,0 +1,3 @@
+1.1.2
+
+Fix Maintenance Status not showing in Top admin bar front

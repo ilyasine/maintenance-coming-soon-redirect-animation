@@ -1,0 +1,373 @@
+#wploti_mr_enabled_notice {
+    border-left-color: #d037ea;
+    display: inline-flex;
+    align-items: center;
+}
+img.main-logo {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    width: 150px;
+    height: fit-content;
+}
+.wrap > h1.big-title {
+    display: block !important;
+}
+
+.wploti-leave-feedback {
+    text-align: right;
+    position: absolute;
+    right: 1em;
+    bottom: 1em;
+}
+
+/* Animations Container */
+.animations{  
+    display: flex;
+    grid-gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.animation-grid{
+    cursor: pointer;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    flex-basis: calc(25% - 15px);
+}
+#lottiecontainer{
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#wploti_bottom_message{
+    margin-top: 20px;
+}
+.selected-animation{
+    width: 50%;
+    margin: 1rem auto;
+    box-shadow: inset 0 0 20px rgb(206 206 206);
+    border-radius: 2px;
+    max-width: 400px;
+}
+.select-bg, .selected-bg{
+    z-index: 1;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background: #2271b124;
+    cursor: auto;  
+}
+.selected-bg{
+    z-index: 1000;
+}
+.select-bg{
+    opacity: 0;
+    transition: .3s ease-in-out;
+}
+.animation-grid:hover .select-bg{
+    opacity: 1;
+}
+.selected-bg + .select-bg{
+    background: transparent;
+}
+.select-btn, .selected-btn{
+    background: #2271b1;
+    color: #ffffff;
+    padding: 3px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-family: cursive;
+}
+.selected-btn{
+    cursor: default !important;
+    color: #2271b1 !important;
+    border-color: #2271b1 !important;
+    background: #f0f0f1 !important;
+}
+.big-title{
+    font-family: cursive;
+}
+.small-title{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+} 
+#wploti_method_message{
+    margin-top: 1rem;
+}
+.bold-title{
+    font-weight: bold;
+    color: black;
+    margin-right: 5px;
+}
+#wploti_note_notice{
+    display: inline-flex;
+    align-items: center;
+    background: #fff;
+    border: 1px solid #c3c4c7;
+    border-left-width: 4px;
+    box-shadow: 0 1px 1px rgb(0 0 0 / 4%);
+    padding: 1px 12px;
+    border-left-color: #d037ea;
+}
+.note_head{
+    display: flex;
+    align-items: center;
+}
+.note_head .alert-icon{
+    width: 38px;
+    margin: 0;
+}
+ul.note_text{
+    list-style-type: disclosure-closed;
+    padding-left: 16px;
+}
+::selection{
+    background: #2271b1;
+    color: #ffffff;
+}
+input{
+    max-width: 100%;
+}
+input[type=text]{
+    border: 1px solid #2271b124;
+}
+input[type=text]:focus{
+    border-color: #2271b1b0;
+    box-shadow: 0 0 0 1px #2271b178;
+}
+.enable-maintenance-mode {
+    margin-bottom: 2em;
+}
+.wploti_mr_admin_section {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    padding-top: 0px;
+    margin: 10px 0;
+}
+.wploti_mr_disabled_field {
+    color: #888;
+}
+.wploti_mr_small_dim {
+    font-size: 11px;
+    font-weight: normal;
+    color: #444;
+}
+.wploti_mr_admin_section dt {
+    font-weight: bold;
+}
+.wploti_mr_admin_section dd {
+    margin-left: 0;
+}
+#load-animations-message{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+#load-animations-message .button{ 
+    cursor: default;
+}
+
+/* Dialog box */
+
+.modal {
+    position: fixed;
+    inset: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.55);
+    direction: ltr;
+}
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    max-width: 50ch;
+    max-height: 600px;
+    position: relative;
+    border-radius: 20px;
+    background: rgb(255, 255, 255);
+    box-shadow: 0 0 15px rgb(0 0 0 / 25%);
+}
+.modal-header {
+    border-radius: 12px 12px 0px 0px;
+    display: flex;
+}
+.btn-close {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: -16px;
+    right: -14px;
+    cursor: pointer;
+}
+.alert-icon{
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    max-width: 100px;
+    margin: auto;
+    animation: zigzag 1s infinite linear;
+}
+.modal .messages{
+    text-align: center;
+}
+.messages div {
+    padding: 0px 16px;
+    color: #1d2327;
+    font-size: 1.1em;
+    font-family: cursive;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.messages div:first-child{
+    margin-bottom: 10px;
+}
+.modal-footer {
+    min-height: 42px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 30px;
+    border-radius: 0px 0px 12px 12px;
+    z-index: 1;
+}
+.modal-footer button{
+    width: 60px;
+}
+
+@keyframes zigzag {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(0.9);
+    }
+    50% {
+        transform: translateX(1);
+    }
+    100% {
+        transform: translateX(1.1);
+    }
+}
+
+@media screen and (max-width: 1366px) {
+    .wploti-leave-feedback {
+        position: relative;
+        bottom: initial;
+        margin: 1em 0;
+    }
+}
+@media screen and (max-width: 600px) {
+    #wploti_mr_enabled_notice{
+        flex-direction: column;
+    }
+}
+@media screen and (max-width: 1100px) {
+    .animation-grid{
+        flex-basis: calc(33.33% - 15px);
+    }
+}
+@media screen and (max-width: 800px) {
+    .animation-grid{
+        flex-basis: calc(50% - 15px);
+    }
+}
+@media screen and (min-width: 1920px) {
+    .animation-grid{
+        flex-basis: calc(20% - 15px);
+    }
+}
+
+/* toggle */
+
+
+.wploti-maintenance-toggle .toggle, .wploti-maintenance-toggle .toggle-wrapper {
+    display: inline-block;
+}
+
+.wploti-maintenance-toggle .toggle {
+    position: relative;
+    width: 340px;
+    height: 50px;
+    font-weight: 600;
+    background: 0 0;
+    border: 1px solid #ddd;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    border-radius: 6em;
+    background: #f6f7f7;
+}
+
+.wploti-maintenance-toggle .toggle:after, .wploti-maintenance-toggle .toggle:before {
+    position: absolute;
+    line-height: 50px;
+    font-size: 1em;
+    z-index: 2;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out
+}
+
+.wploti-maintenance-toggle input[type=checkbox].toggle-checkbox {
+    display: none
+}
+
+.wploti-maintenance-toggle .toggle_handler {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    background: #f63739;
+    width: 170px;
+    height: 44px;
+    top: 3px;
+    left: 5px;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+    border-radius: 6em;
+}
+
+.wploti-maintenance-toggle .toggle-checkbox:checked+.toggle .toggle_handler {
+    -webkit-transform: translateX(160px);
+    -ms-transform: translateX(160px);
+    transform: translateX(160px);
+    background: #00a32a;
+}
+
+.wploti-maintenance-toggle .toggle:before {
+    content: "Disabled";
+    left: 63px;
+    color: #fff
+}
+
+.wploti-maintenance-toggle .toggle-checkbox:checked+.toggle:before, .wploti-maintenance-toggle .toggle:after {
+    color: #444;
+}
+
+.wploti-maintenance-toggle .toggle:after {
+    content: "Enabled";
+    right: 68px;
+}
+
+.wploti-maintenance-toggle .toggle-checkbox:checked+.toggle:after {
+    color: #fff;
+} 
+
+
+
