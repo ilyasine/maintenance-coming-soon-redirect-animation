@@ -1,7 +1,10 @@
 html{
-    background: #ECE9E6;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #ECE9E6;
+   /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);
+   /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFFFFF, #ECE9E6);
+   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 body{
     display: flex;
@@ -26,13 +29,14 @@ body{
 }
 /* lottie-player{
     width: 80%;
-} */
+}
+*/
 @media screen and (max-width : 800px){
-  /*   lottie-player{
-    width: 90%;
-    } */
+   /* lottie-player{
+        width: 90%;
+   }
+    */
     body{
         gap: 5vh;
-    }
-
+   }
 }

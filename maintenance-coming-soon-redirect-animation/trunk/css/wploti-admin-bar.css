@@ -11,17 +11,14 @@
     display: flex !important;
 }
 #wp-admin-bar-wploti-activation-status .ab-item div{
-   margin-right: 5px;
+    margin-right: 5px;
 }
-
 /* Top bar Status */
-
 #wpadminbar #wp-admin-bar-wploti-activation-status a {
     padding-left: 30px;
 }
-
 #wpadminbar #wp-admin-bar-wploti-activation-status .toggle-wrapper {
-  display: inline-block;
+    display: inline-block;
 }
 #wpadminbar #wp-admin-bar-wploti-activation-status #wploti-toggle-adminbar {
     cursor: pointer;
@@ -36,7 +33,6 @@
     transition: all 200ms ease-in-out;
     border: none;
 }
-
 #wpadminbar #wp-admin-bar-wploti-activation-status #wploti-toggle-adminbar:before, #wpadminbar #wploti-toggle-adminbar:after {
     position: absolute;
     line-height: 32px;
@@ -45,11 +41,9 @@
     -webkit-transition: all 200ms ease-in-out;
     transition: all 200ms ease-in-out;
 }
-
 #wpadminbar #wp-admin-bar-wploti-activation-status input[type=checkbox].toggle-checkbox {
-  display: none;
+    display: none;
 }
-
 #wpadminbar #wp-admin-bar-wploti-activation-status .toggle_handler {
     display: inline-block;
     position: relative;
@@ -65,56 +59,45 @@
     -webkit-transform: translateX(0px);
     transform: translateX(0px);
 }
-
 #wpadminbar #wp-admin-bar-wploti-activation-status #wploti-toggle-adminbar.status-1 .toggle_handler {
     -webkit-transform: translateX(40px);
     transform: translateX(40px);
     background: #00a32a;
 }
-
-
 #wpadminbar #wp-admin-bar-wploti-activation-status #wploti-toggle-adminbar:before {
     content: "OFF";
     left: 15px;
     color: #ffffff;
 }
-
 #wpadminbar #wp-admin-bar-wploti-activation-status #wploti-toggle-adminbar:after {
     content: "ON";
     right: 16px;
     color: #ffffff;
 }
-
 #wpadminbar #wp-admin-bar-wploti-activation-status #wploti-toggle-adminbar.status-1:before {
     color: #ffffff;
 }
-
 #wpadminbar #wp-admin-bar-wploti-activation-status #wploti-toggle-adminbar.status-1:after {
     color: #ffffff;
 }
-
 @media screen and (max-width: 782px) {
     #wpadminbar ul li#wp-admin-bar-wploti-activation-status {
         display: block;
-    }
-
+   }
     #wpadminbar ul li#wp-admin-bar-wploti-activation-status span {
         display: none;
-    }
-
+   }
     #wpadminbar #wp-admin-bar-wploti-activation-status a {
         padding-left: 40px;
-    }
-
+   }
     #wpadminbar .cmp-logo {
         height: 28px;
         top: 9px;
         left: 18px;
-    }
+   }
 }
-
 @media screen and (max-width:440px) {
     #wpadminbar ul li#wp-admin-bar-wploti-activation-status {
         display: none;
-    }
+   }
 }

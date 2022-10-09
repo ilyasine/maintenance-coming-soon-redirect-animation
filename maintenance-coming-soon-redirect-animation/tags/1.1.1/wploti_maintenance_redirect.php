@@ -3,20 +3,19 @@
 Plugin Name:		Maintenance & Coming Soon Redirect Animation
 Plugin URI:			https://wordpress.org/plugins/maintenance-coming-soon-redirect-animation/
 Description:		Make your website in maintenance mode in seconds with great looking animations and configure settings to allow specific users to bypass the maintenance mode functionality in order to preview the site prior to public launch.
-Version:			1.1.2
-Stable tag:	 		1.1.2
+Version:			1.1.1
+Stable tag:	 		1.1.1
 Requires at least:	4.6
-Tested up to:		6.0.2
+Tested up to:		6.0.1
 Requires PHP:		5.2.4
 
 Text Domain: 		maintenance-coming-soon-redirect-animation
-Domain Path: 		/languages
 
 License:			GPLv3
 License URI:		https://www.gnu.org/licenses/gpl-3.0.html
 
-Author:				Yassine Idrissi 
-Author URI:			https://profiles.wordpress.org/yasinedr/
+Author:      		Yassine Idrissi 
+Author URI:          https://profiles.wordpress.org/yasinedr/
 
 Copyright:			2022 Yassine Idrissi	(email: ydrissi9@gmail.com)
 				based on Jack Finch Original: 2010-2012  
@@ -41,9 +40,8 @@ Copyright:			2022 Yassine Idrissi	(email: ydrissi9@gmail.com)
 
 // Exit if accessed directly
 
-
-
 defined( 'ABSPATH' ) || exit;
+
 
 if( !class_exists("wploti_maintenance_redirect") ) {
 
@@ -121,9 +119,7 @@ if( !class_exists("wploti_maintenance_redirect") ) {
 			update_option('wploti_notes_notice', 1 );
 			update_option('wploti_status', '0');
 			update_option('wploti_header_type', '200');
-			$wploti_message = __( 'This site is currently undergoing maintenance. Please check back later', 'maintenance-coming-soon-redirect-animation' );
-			update_option('wploti_message', $wploti_message);
-			
+			update_option('wploti_message', 'This site is currently undergoing maintenance. Please check back later');
 		}
 
 		/**
@@ -150,7 +146,6 @@ if( !class_exists("wploti_maintenance_redirect") ) {
 			wp_die();
 
 		}
-		
 
 		/**
 		 * (php) Update header type
@@ -226,7 +221,7 @@ if( !class_exists("wploti_maintenance_redirect") ) {
 			global $wp_admin_bar;
 			$wploti_ajax_nonce = wp_create_nonce( "wploti_nonce" );
 			$wploti_menu_image = '<div class="wploti_menu_image" style=" background-image: url(&quot;'. wploti_icon .'&quot;) !important;" aria-hidden="true"></div>';
-			$topbar = $wploti_menu_image.'<div class="wploti_menu_text">'. __( "Maintenance Status" , "maintenance-coming-soon-redirect-animation" ) .' : </div><div class="toggle-wrapper"><div id="wploti-status-menubar" class="toggle-checkbox"></div><div id="wploti-toggle-adminbar" class="status-' . esc_attr( $this->wploti_active() ) . '" data-security="'. esc_attr($wploti_ajax_nonce) .'"><span class="toggle_handler"></span></div></div>';
+			$topbar = $wploti_menu_image.'<div class="wploti_menu_text">'. __( "Maintenance Status" ) .' : </div><div class="toggle-wrapper"><div id="wploti-status-menubar" class="toggle-checkbox"></div><div id="wploti-toggle-adminbar" class="status-' . esc_attr( $this->wploti_active() ) . '" data-security="'. esc_attr($wploti_ajax_nonce) .'"><span class="toggle_handler"></span></div></div>';
 
 	    	//Add the main siteadmin menu item
 	        $wp_admin_bar->add_menu( array(
@@ -331,11 +326,11 @@ if( !class_exists("wploti_maintenance_redirect") ) {
 						<div id="lottiecontainer">
 						<?php if ( get_option("wploti_animation") == $animations[$counter] ) : ?>
 							<div class="selected-bg">
-								<span class="selected-btn wp-core-ui button-secondary"><?php _e('Selected', 'maintenance-coming-soon-redirect-animation'); ?></span>
+								<span class="selected-btn wp-core-ui button-secondary"><?php _e('Selected') ?></span>
 							</div>
 						<?php endif; ?>										
 							<div class="select-bg">
-								<span class="select-btn wp-core-ui button-primary"><?php _e('Select', 'maintenance-coming-soon-redirect-animation') ?></span>
+								<span class="select-btn wp-core-ui button-primary"><?php _e('Select') ?></span>
 							</div>										
 							<lottie-player autoplay="true" loop src="<?php echo wploti_animation_dir .$animations[esc_attr($counter)] ?>" class="lottieanimation"></lottie-player>
 						</div>
@@ -357,7 +352,7 @@ if( !class_exists("wploti_maintenance_redirect") ) {
 
 						animation_url = animation.get(0).src ;
 
-						selected_bg = '<div class="selected-bg"><span class="selected-btn wp-core-ui button-secondary"><?php _e('Selected', 'maintenance-coming-soon-redirect-animation'); ?></span></div>';
+						selected_bg = '<div class="selected-bg"><span class="selected-btn wp-core-ui button-secondary">Selected</span></div>';
 
 						$('.selected-animation > lottie-player').remove();
 
@@ -456,42 +451,6 @@ if( !class_exists("wploti_maintenance_redirect") ) {
 		}
 
 		/**
-		 * (php) load translation files
-		 *
-		 * @since 1.1.2
-		 * @access public
-		 * @return void
-		 */
-		
-		function wploti_translation() {
-
-			load_plugin_textdomain( 'maintenance-coming-soon-redirect-animation', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
-
-		}
-
-		/**
-		 * (php) handle external translation files
-		 *
-		 * @since 1.1.2
-		 * @access public
-		 * @return void
-		 */
-		
-		function wploti_translations_script() {
-	
-			// Strings to be translated
-			$translation_array = array(
-				'be_careful' => __( 'Please Be careful', 'maintenance-coming-soon-redirect-animation' ),
-				'option_reset_txt' => __( 'This option will reset all your selections to defaults options and will delete the IP addresses and access keys as well', 'maintenance-coming-soon-redirect-animation' ),
-				'pls_wait' => __( 'Please Wait', 'maintenance-coming-soon-redirect-animation' )
-			);
-
-			// Localize the script with new data
-			wp_localize_script( 'admin-script', 'wploti_translate', $translation_array );
-
-		}
-
-		/**
 		 * (php) find user IP
 		 *
 		 * @since 1.0.0
@@ -528,12 +487,12 @@ if( !class_exists("wploti_maintenance_redirect") ) {
 		 */
 		public function reset_plugin_settings() {
 
-			global $wpdb , $wploti_message;
+			global $wpdb;
 
 			try {
 				// check capabilities
 				if ( ! current_user_can('manage_options') ) {
-					throw new Exception( __( 'You do not have access to this resource.', 'maintenance-coming-soon-redirect-animation' ) );
+					throw new Exception( __( 'You do not have access to this resource.', 'wploti-maintenance-mode' ) );
 				}
 
 				// check nonce
@@ -542,8 +501,7 @@ if( !class_exists("wploti_maintenance_redirect") ) {
 				// update options using the default values			
 				update_option('wploti_animation', 'default-animation.json');
 				update_option('wploti_header_type', '200');
-				$wploti_message = __( 'This site is currently undergoing maintenance. Please check back later', 'maintenance-coming-soon-redirect-animation' );
-				update_option('wploti_message', $wploti_message);
+				update_option('wploti_message', 'This site is currently undergoing maintenance. Please check back later');
 
 				// delete ip_adresses & access keys
 				$ip_adresses = $wpdb->prefix . $this->admin_options_name . '_unrestricted_ips';
@@ -769,7 +727,7 @@ if( !class_exists("wploti_maintenance_redirect") ) {
 				// send table data
 				$this->print_unrestricted_ips();
 			}else{
-				_e( 'Unable to add IP because of a database error. Please reload the page.' , 'maintenance-coming-soon-redirect-animation' );
+				_e( 'Unable to add IP because of a database error. Please reload the page.' );
 			}
 			die();
 		}
@@ -820,7 +778,7 @@ if( !class_exists("wploti_maintenance_redirect") ) {
 			if( $rs ){
 				$this->print_unrestricted_ips();
 			}else{
-				_e( 'Unable to delete IP because of a database error. Please reload the page.' , 'maintenance-coming-soon-redirect-animation' );
+				_e( 'Unable to delete IP because of a database error. Please reload the page.' );
 			}
 			die();
 		}
@@ -845,16 +803,16 @@ if( !class_exists("wploti_maintenance_redirect") ) {
 			$rs         = $wpdb->query( $sql );
 			if( $rs ){
 				// email user
-				$subject    = sprintf( /* translators: %s = name of the website/blog */ __( "Access Key Link for %s" , "maintenance-coming-soon-redirect-animation" ), get_bloginfo() );
-				$full_msg   = sprintf( /* translators: %s = name of the website/blog */ __( "The following link will provide you temporary access to %s:" , "maintenance-coming-soon-redirect-animation" ), get_bloginfo() ) . "\n\n"; 
-				$full_msg  .= __( "Please note that you must have cookies enabled for this to work." , "maintenance-coming-soon-redirect-animation" ) . "\n\n";
+				$subject    = sprintf( /* translators: %s = name of the website/blog */ __( "Access Key Link for %s" ), get_bloginfo() );
+				$full_msg   = sprintf( /* translators: %s = name of the website/blog */ __( "The following link will provide you temporary access to %s:" ), get_bloginfo() ) . "\n\n"; 
+				$full_msg  .= __( "Please note that you must have cookies enabled for this to work." ) . "\n\n";
 				$full_msg  .= get_bloginfo('url') . '?wploti_mr_temp_access_key=' . $access_key;
 				$mail_sent  = wp_mail( $email, $subject, $full_msg );
 				echo ( esc_html($mail_sent) ) ? '<!-- SEND_SUCCESS -->' : '<!-- SEND_FAILURE -->';
 				// send table data
 				$this->print_access_keys();
 			}else{
-				_e( "Unable to add Access Key because of a database error. Please reload the page." , "maintenance-coming-soon-redirect-animation" );
+				_e( "Unable to add Access Key because of a database error. Please reload the page." );
 			}
 			die();
 		}
@@ -905,7 +863,7 @@ if( !class_exists("wploti_maintenance_redirect") ) {
 			if( $rs ){
 				$this->print_access_keys();
 			}else{
-				_e( 'Unable to delete Access Key because of a database error. Please reload the page.' , 'maintenance-coming-soon-redirect-animation');
+				_e( 'Unable to delete Access Key because of a database error. Please reload the page.' );
 			}
 			die();
 		}
@@ -927,9 +885,9 @@ if( !class_exists("wploti_maintenance_redirect") ) {
 			$sql       = $wpdb->prepare("select * from ". esc_sql($tbl) ." where id = '". esc_sql($ak_id) ."'");
 			$ak        = $wpdb->get_row( $sql );
 			if( $ak ){
-				$subject    = sprintf( /* translators: %s = name of the website/blog */ __( "Access Key Link for %s" , "maintenance-coming-soon-redirect-animation"), get_bloginfo() );
-				$full_msg   = sprintf( /* translators: %s = name of the website/blog */ __( "The following link will provide you temporary access to %s:" , "maintenance-coming-soon-redirect-animation"), get_bloginfo() ) . "\n\n"; 
-				$full_msg  .= __( "Please note that you must have cookies enabled for this to work." , "maintenance-coming-soon-redirect-animation") . "\n\n";
+				$subject    = sprintf( /* translators: %s = name of the website/blog */ __( "Access Key Link for %s" ), get_bloginfo() );
+				$full_msg   = sprintf( /* translators: %s = name of the website/blog */ __( "The following link will provide you temporary access to %s:" ), get_bloginfo() ) . "\n\n"; 
+				$full_msg  .= __( "Please note that you must have cookies enabled for this to work." ) . "\n\n";
 				$full_msg  .= get_bloginfo('url') . '?wploti_mr_temp_access_key=' . esc_html($ak->access_key);
 				$mail_sent  = wp_mail( $ak->email, $subject, $full_msg );
 				echo ( esc_html($mail_sent) ) ? 'SEND_SUCCESS' : 'SEND_FAILURE';
@@ -953,21 +911,21 @@ if( !class_exists("wploti_maintenance_redirect") ) {
 			<table class="widefat fixed" cellspacing="0">
 				<thead>
 					<tr>
-						<th class="column-wploti-ip-name"><?php _e( "Name" , "maintenance-coming-soon-redirect-animation" ); ?></th>
-						<th class="column-wploti-ip-ip"><?php _e( "IP" , "maintenance-coming-soon-redirect-animation"); ?></th>
-						<th class="column-wploti-ip-active"><?php _e( "Creation Date" , "maintenance-coming-soon-redirect-animation"); ?></th>
-						<th class="column-wploti-ip-creation-date"><?php _e( "Active" , "maintenance-coming-soon-redirect-animation"); ?></th>
-						<th class="column-wploti-actions"><?php _e( "Actions" , "maintenance-coming-soon-redirect-animation"); ?></th>
+						<th class="column-wploti-ip-name"><?php _e( "Name" ); ?></th>
+						<th class="column-wploti-ip-ip"><?php _e( "IP" ); ?></th>
+						<th class="column-wploti-ip-active"><?php _e( "Creation Date" ); ?></th>
+						<th class="column-wploti-ip-creation-date"><?php _e( "Active" ); ?></th>
+						<th class="column-wploti-actions"><?php _e( "Actions" ); ?></th>
 					</tr>
 				</thead>
 
 				<tfoot>
 					<tr>
-						<th class="column-wploti-ip-name"><?php _e( "Name" , "maintenance-coming-soon-redirect-animation"); ?></th>
-						<th class="column-wploti-ip-ip"><?php _e( "IP" , "maintenance-coming-soon-redirect-animation"); ?></th>
-						<th class="column-wploti-ip-creation-date"><?php _e( "Creation Date" , "maintenance-coming-soon-redirect-animation"); ?></th>
-						<th class="column-wploti-ip-active"><?php _e( "Active" , "maintenance-coming-soon-redirect-animation"); ?></th>						
-						<th class="column-wploti-actions"><?php _e( "Actions" , "maintenance-coming-soon-redirect-animation"); ?></th>
+						<th class="column-wploti-ip-name"><?php _e( "Name" ); ?></th>
+						<th class="column-wploti-ip-ip"><?php _e( "IP" ); ?></th>
+						<th class="column-wploti-ip-creation-date"><?php _e( "Creation Date" ); ?></th>
+						<th class="column-wploti-ip-active"><?php _e( "Active" ); ?></th>						
+						<th class="column-wploti-actions"><?php _e( "Actions" ); ?></th>
 					</tr>
 				</tfoot>
 
@@ -988,17 +946,17 @@ if( !class_exists("wploti_maintenance_redirect") ) {
 								<td class="column-wploti-ip-name"><?php echo esc_html($ip_name); ?></td>
 								<td class="column-wploti-ip-ip"><?php echo esc_html($ip_address); ?></td>
 								<td class="column-wploti-ip-creation-date"><?php echo esc_html($ip_creation_date); ?></td>
-								<td class="column-wploti-ip-active" id="wploti_mr_ip_status_<?php echo esc_attr($ip_id); ?>" ><?php echo ( sanitize_text_field($ip->active) == 1) ? __( 'Yes' , 'maintenance-coming-soon-redirect-animation' ) : __( 'No' , 'maintenance-coming-soon-redirect-animation' ); ?></td>
+								<td class="column-wploti-ip-active" id="wploti_mr_ip_status_<?php echo esc_attr($ip_id); ?>" ><?php echo ( sanitize_text_field($ip->active) == 1) ? __('Yes') : __('No'); ?></td>
 								<td class="column-wploti-actions">
 									<span class='edit' id="wploti_mr_ip_status_<?php echo esc_attr($ip_id); ?>_action">
 										<?php if( $ip->active == 1 ){ ?>
-											<a href="javascript:wploti_mr_toggle_ip( 0, <?php echo esc_attr($ip_id) ?> );"><?php _e( "Disable" , "maintenance-coming-soon-redirect-animation" ); ?></a> | 
+											<a href="javascript:wploti_mr_toggle_ip( 0, <?php echo esc_attr($ip_id) ?> );"><?php _e( "Disable" ); ?></a> | 
 										<?php }else{ ?>
-											<a href="javascript:wploti_mr_toggle_ip( 1, <?php echo esc_attr($ip_id) ?> );"><?php _e( "Enable" , "maintenance-coming-soon-redirect-animation" ); ?></a> | 
+											<a href="javascript:wploti_mr_toggle_ip( 1, <?php echo esc_attr($ip_id) ?> );"><?php _e( "Enable" ); ?></a> | 
 										<?php } ?>
 									</span>
 									<span class='delete'>
-										<a class='submitdelete' href="javascript:wploti_mr_delete_ip( <?php echo esc_attr($ip_id) ?>, '<?php echo addslashes( esc_attr($ip_address) ) ?>' );" ><?php _e( "Delete" , "maintenance-coming-soon-redirect-animation" ); ?></a>
+										<a class='submitdelete' href="javascript:wploti_mr_delete_ip( <?php echo esc_attr($ip_id) ?>, '<?php echo addslashes( esc_attr($ip_address) ) ?>' );" ><?php _e( "Delete" ); ?></a>
 									</span>
 								</td>
 							</tr>
@@ -1010,17 +968,16 @@ if( !class_exists("wploti_maintenance_redirect") ) {
 					
 					<tr id="wploti-ip-NEW" valign="middle"  class="<?php echo esc_attr($ip_row_class); ?>">
 						<td class="column-wploti-ip-name">
-							<input class="wploti_mr_disabled_field" type="text" id="wploti_mr_new_ip_name" name="wploti_mr_new_ip_name" placeholder="<?php _e( "Enter Name:" , "maintenance-coming-soon-redirect-animation"); ?>">
-							
+							<input class="wploti_mr_disabled_field" type="text" id="wploti_mr_new_ip_name" name="wploti_mr_new_ip_name" placeholder="<?php _e( "Enter Name:" ); ?>" onfocus="wploti_mr_undim_field('wploti_mr_new_ip_name','<?php _e( "Enter Name:" ); ?>') onblur="wploti_mr_dim_field('wploti_mr_new_ip_name','<?php _e( "Enter Name:" ); ?>');">
 						</td>
 						<td class="column-wploti-ip-ip">
-							<input class="wploti_mr_disabled_field" type="text" id="wploti_mr_new_ip_ip" name="wploti_mr_new_ip_ip" placeholder="<?php _e( "Enter IP:" , "maintenance-coming-soon-redirect-animation"); ?>">
+							<input class="wploti_mr_disabled_field" type="text" id="wploti_mr_new_ip_ip" name="wploti_mr_new_ip_ip" placeholder="<?php _e( "Enter IP:" ); ?>" onfocus="wploti_mr_undim_field('wploti_mr_new_ip_ip','<?php _e( "Enter IP:" ); ?>');" onblur="wploti_mr_dim_field('wploti_mr_new_ip_ip','<?php _e( "Enter IP:" ); ?>');">
 						</td>
 						<td class="column-wploti-ip-active">&nbsp;</td>
 						<td class="column-wploti-ip-creation-date">&nbsp;</td>
 						<td class="column-wploti-actions">
 							<span class='edit' id="wploti_mr_add_ip_link">
-								<a href="javascript:wploti_mr_add_new_ip( );"><?php _e( "Add New IP" , "maintenance-coming-soon-redirect-animation"); ?></a>
+								<a href="javascript:wploti_mr_add_new_ip( );"><?php _e( "Add New IP" ); ?></a>
 							</span>
 						</td>
 					</tr>					
@@ -1042,23 +999,23 @@ if( !class_exists("wploti_maintenance_redirect") ) {
 			<table class="widefat fixed" cellspacing="0">
 				<thead>
 					<tr>
-						<th class="column-wploti-ak-name"><?php _e( "Name" , "maintenance-coming-soon-redirect-animation"); ?></th>
-						<th class="column-wploti-ak-email"><?php _e( "Email" , "maintenance-coming-soon-redirect-animation"); ?></th>
-						<th class="column-wploti-ak-key"><?php _e( "Access Key" , "maintenance-coming-soon-redirect-animation"); ?></th>
-						<th class="column-wploti-ak-key-creation-date"><?php _e( "Creation Date" , "maintenance-coming-soon-redirect-animation"); ?></th>
-						<th class="column-wploti-ak-active"><?php _e( "Active" , "maintenance-coming-soon-redirect-animation"); ?></th>
-						<th class="column-wploti-actions"><?php _e( "Actions" , "maintenance-coming-soon-redirect-animation"); ?></th>
+						<th class="column-wploti-ak-name"><?php _e( "Name" ); ?></th>
+						<th class="column-wploti-ak-email"><?php _e( "Email" ); ?></th>
+						<th class="column-wploti-ak-key"><?php _e( "Access Key" ); ?></th>
+						<th class="column-wploti-ak-key-creation-date"><?php _e( "Creation Date" ); ?></th>
+						<th class="column-wploti-ak-active"><?php _e( "Active" ); ?></th>
+						<th class="column-wploti-actions"><?php _e( "Actions" ); ?></th>
 					</tr>
 				</thead>
 
 				<tfoot>
 					<tr>
-						<th class="column-wploti-ak-name"><?php _e( "Name" , "maintenance-coming-soon-redirect-animation"); ?></th>
-						<th class="column-wploti-ak-email"><?php _e( "Email" , "maintenance-coming-soon-redirect-animation"); ?></th>
-						<th class="column-wploti-ak-key"><?php _e( "Access Key" , "maintenance-coming-soon-redirect-animation"); ?></th>
-						<th class="column-wploti-ak-key-creation-date"><?php _e( "Creation Date" , "maintenance-coming-soon-redirect-animation"); ?></th>
-						<th class="column-wploti-ak-active"><?php _e( "Active" , "maintenance-coming-soon-redirect-animation"); ?></th>
-						<th class="column-wploti-actions"><?php _e( "Actions" , "maintenance-coming-soon-redirect-animation"); ?></th>
+						<th class="column-wploti-ak-name"><?php _e( "Name" ); ?></th>
+						<th class="column-wploti-ak-email"><?php _e( "Email" ); ?></th>
+						<th class="column-wploti-ak-key"><?php _e( "Access Key" ); ?></th>
+						<th class="column-wploti-ak-key-creation-date"><?php _e( "Creation Date" ); ?></th>
+						<th class="column-wploti-ak-active"><?php _e( "Active" ); ?></th>
+						<th class="column-wploti-actions"><?php _e( "Actions" ); ?></th>
 					</tr>
 				</tfoot>
 				
@@ -1081,20 +1038,20 @@ if( !class_exists("wploti_maintenance_redirect") ) {
 								<td class="column-wploti-ak-email"><a href="mailto:<?php echo esc_attr($ak_email) ?>" title="email : <?php echo esc_attr($ak_email) ?>"><?php echo esc_html($ak_email) ?></a></td>
 								<td class="column-wploti-ak-key"><?php echo esc_html($ak_key); ?></td>
 								<td class="column-wploti-ak-key-creation-date"><?php echo esc_html($ak_creation_date); ?></td>
-								<td class="column-wploti-ak-active" id="wploti_mr_ak_status_<?php echo esc_attr($ak_code); ?>" ><?php echo ( $code->active == 1) ?  _e( "Yes" , "maintenance-coming-soon-redirect-animation") :  _e( "No" , "maintenance-coming-soon-redirect-animation"); ?></td>
+								<td class="column-wploti-ak-active" id="wploti_mr_ak_status_<?php echo esc_attr($ak_code); ?>" ><?php echo ( $code->active == 1) ? 'Yes' : 'No'; ?></td>
 								<td class="column-wploti-actions">
 									<span class='edit' id="wploti_mr_ak_status_<?php echo esc_attr($ak_code); ?>_action">
 										<?php if( $code->active == 1 ){ ?>
-											<a href="javascript:wploti_mr_toggle_ak( 0, <?php echo esc_attr($ak_code); ?> );"><?php _e( "Disable" , "maintenance-coming-soon-redirect-animation"); ?></a> | 
+											<a href="javascript:wploti_mr_toggle_ak( 0, <?php echo esc_attr($ak_code); ?> );"><?php _e( "Disable" ); ?></a> | 
 										<?php }else{ ?>
-											<a href="javascript:wploti_mr_toggle_ak( 1, <?php echo esc_attr($ak_code); ?> );"><?php _e( "Enable" , "maintenance-coming-soon-redirect-animation"); ?></a> | 
+											<a href="javascript:wploti_mr_toggle_ak( 1, <?php echo esc_attr($ak_code); ?> );"><?php _e( "Enable" ); ?></a> | 
 										<?php } ?>
 									</span>
 									<span class='resend'>
-										<a class='submitdelete' href="javascript:wploti_mr_resend_ak( <?php echo esc_attr($ak_code) ?>, '<?php echo addslashes( esc_attr($ak_name) ) ?>', '<?php echo addslashes( esc_attr($ak_email) ) ?>' );" ><?php _e( "Resend Code" , "maintenance-coming-soon-redirect-animation"); ?></a> | 
+										<a class='submitdelete' href="javascript:wploti_mr_resend_ak( <?php echo esc_attr($ak_code) ?>, '<?php echo addslashes( esc_attr($ak_name) ) ?>', '<?php echo addslashes( esc_attr($ak_email) ) ?>' );" ><?php _e( "Resend Code" ); ?></a> | 
 									</span>
 									<span class='delete'>
-										<a class='submitdelete' href="javascript:wploti_mr_delete_ak( <?php echo esc_attr($ak_code) ?>, '<?php echo addslashes( esc_attr($ak_name) ) ?>' );" ><?php _e( "Delete" , "maintenance-coming-soon-redirect-animation" ); ?></a>
+										<a class='submitdelete' href="javascript:wploti_mr_delete_ak( <?php echo esc_attr($ak_code) ?>, '<?php echo addslashes( esc_attr($ak_name) ) ?>' );" ><?php _e( "Delete" ); ?></a>
 									</span>
 								</td>
 							</tr>
@@ -1105,17 +1062,17 @@ if( !class_exists("wploti_maintenance_redirect") ) {
 					?>
 					<tr id="wploti-ak-NEW" valign="middle"  class="<?php echo esc_attr($ak_row_class); ?>">
 						<td class="column-wploti-ak-name">
-							<input class="wploti_mr_disabled_field" type="text" id="wploti_mr_new_ak_name" name="wploti_mr_new_ak_name" placeholder="<?php _e( "Enter Name:" , "maintenance-coming-soon-redirect-animation"); ?>">
+							<input class="wploti_mr_disabled_field" type="text" id="wploti_mr_new_ak_name" name="wploti_mr_new_ak_name" placeholder="<?php _e( "Enter Name:" ); ?>" onfocus="wploti_mr_undim_field('wploti_mr_new_ak_name','<?php _e( "Enter Name:" ); ?>');" onblur="wploti_mr_dim_field('wploti_mr_new_ak_name','<?php _e( "Enter Name:" ); ?>');">
 						</td>
 						<td class="column-wploti-ak-email">
-							<input class="wploti_mr_disabled_field" type="text" id="wploti_mr_new_ak_email" name="wploti_mr_new_ak_email" placeholder="<?php _e( "Enter Email:" , "maintenance-coming-soon-redirect-animation"); ?>">
+							<input class="wploti_mr_disabled_field" type="text" id="wploti_mr_new_ak_email" name="wploti_mr_new_ak_email" placeholder="<?php _e( "Enter Email:" ); ?>" onfocus="wploti_mr_undim_field('wploti_mr_new_ak_email','<?php _e( "Enter Email:" ); ?>');" onblur="wploti_mr_dim_field('wploti_mr_new_ak_email','<?php _e( "Enter Email:" ); ?>');">
 						</td>
 						<td class="column-wploti-ak-key">&nbsp;</td>
 						<td class="column-wploti-ak-active">&nbsp;</td>
 						<td class="column-wploti-ak-key-creation-date">&nbsp;</td>
 						<td class="column-wploti-actions">
 							<span class='edit' id="wploti_mr_add_ak_link">
-								<a href="javascript:wploti_mr_add_new_ak( );"><?php _e( "Add New Access Key" , "maintenance-coming-soon-redirect-animation"); ?></a>
+								<a href="javascript:wploti_mr_add_new_ak( );"><?php _e( "Add New Access Key" ); ?></a>
 							</span>
 						</td>
 					</tr>					
@@ -1139,15 +1096,15 @@ if( !class_exists("wploti_maintenance_redirect") ) {
 	
 					// load the notices view
 					$current_screen = get_current_screen();
-					$settingslink = ( $current_screen->id != "settings_page_wploti-settings" ) ? ' <a href="options-general.php?page=wploti-settings">'.__( 'Settings' , 'maintenance-coming-soon-redirect-animation' ).'</a>' : '';
+					$settingslink = ( $current_screen->id != "settings_page_wploti-settings" ) ? ' <a href="options-general.php?page=wploti-settings">'.__( 'Settings' ).'</a>' : '';
 					$welcomemsg = '';
 					$welcomemsg .='<div class="notice notice-success is-dismissable" id="wploti_mr_enabled_notice">';
 					$welcomemsg .='<img class="main-logo" src="'. plugin_dir_url( __FILE__ ).'\images\main-logo.png">';
 					$welcomemsg .='<div class="notice-activation-text-wrapper">';
-					$welcomemsg .='<p><h3 class="main_redirect_msg">'. __( "Thank you for installing Maintenance & Coming Soon Redirect Animation Plugin!" , "maintenance-coming-soon-redirect-animation" ) . '</h3>';
-					$welcomemsg .='<span>'. __( "You can activate the Maintenance Mode in" , "maintenance-coming-soon-redirect-animation" ) . $settingslink . ' ' .  __( "or by Maintenance Status Top bar icon and choose your animation !", "maintenance-coming-soon-redirect-animation" ) .'</span>';
+					$welcomemsg .='<p><h3 class="main_redirect_msg">Thank you for installing Maintenance & Coming Soon Redirect Animation Plugin!</h3>';
+					$welcomemsg .='<span>You can activate the Maintenance Mode in '. $settingslink .' or by Maintenance Status Top bar icon and choose your animation !</span>';
 					$welcomemsg .='<div class="wploti-leave-feedback">';
-					$welcomemsg .='<div><a href="#dismiss" data-security="'. esc_attr($wploti_ajax_nonce) .'" name="wploti-activation-dismiss" class="wploti-activation-dismiss">' . __( "Dismiss" , "maintenance-coming-soon-redirect-animation" ) .' </a></div>';
+					$welcomemsg .='<div><a href="#dismiss" data-security="'. esc_attr($wploti_ajax_nonce) .'" name="wploti-activation-dismiss" class="wploti-activation-dismiss">Dismiss</a></div>';
 					$welcomemsg .='</div>';
 					$welcomemsg .='</div>';
 					$welcomemsg .='</p></div>';
@@ -1201,7 +1158,7 @@ if( !class_exists("wploti_maintenance_redirect") ) {
 		function wploti_site_health() {			
 			
 			$result = array(
-				'label'       => __( 'Maintenance Redirect is not enabled' , 'maintenance-coming-soon-redirect-animation' ),
+				'label'       => __( 'Maintenance Redirect is not enabled' ),
 				'status'      => 'good',
 				'badge'       => array(
 					'label' => __( 'Visibility' ),
@@ -1209,7 +1166,7 @@ if( !class_exists("wploti_maintenance_redirect") ) {
 				),
 				'description' => sprintf(
 					'<p>%s</p>',
-					__( 'Maintenance is not enabled and your site is visible to visitors.' , 'maintenance-coming-soon-redirect-animation' )
+					__( 'Maintenance is not enabled and your site is visible to visitors.' )
 				),
 				'actions'     => sprintf(
 					'<p><a href="options-general.php?page=wploti-settings">%s</a></p>',
@@ -1222,18 +1179,18 @@ if( !class_exists("wploti_maintenance_redirect") ) {
 			
 				if ( get_option('wploti_header_type') == "200" ) {
 					$result['status'] = 'recommended';
-					$result['label'] = __( 'Maintenance Redirect is enabled' , 'maintenance-coming-soon-redirect-animation' );
+					$result['label'] = __( 'Maintenance Redirect is enabled' );
 					$result['description'] = sprintf(
 						'<p>%s</p>',
-						__( 'Maintenance is enabled and your site is not visible to visitors.' , 'maintenance-coming-soon-redirect-animation' )
+						__( 'Maintenance is enabled and your site is not visible to visitors.' )
 					);
 				} else {
 					$result['status'] = 'critical';
 					$result['badge']['color'] = 'red';
-					$result['label'] = __( 'Maintenance is enabled' , 'maintenance-coming-soon-redirect-animation' );
+					$result['label'] = __( 'Maintenance is enabled' );
 					$result['description'] = sprintf(
 						'<p>%s</p>',
-						__( 'Maintenance is enabled and your site is not visible to visitors. Your redirection type is set to 503, which could harm your Google ranking if left on for any length of time.' , 'maintenance-coming-soon-redirect-animation')
+						__( 'Maintenance is enabled and your site is not visible to visitors. Your redirection type is set to 503, which could harm your Google ranking if left on for any length of time.' )
 					);
 				}
 				
@@ -1267,7 +1224,7 @@ if( !class_exists("wploti_maintenance_redirect") ) {
 			global $wploti_ajax_nonce;
 
 			// display update notice 
-			echo '<div class="updated" style="display: none" ><p><strong>'. __("Settings Saved" , "maintenance-coming-soon-redirect-animation" ) .'</strong></p></div>';
+			echo '<div class="updated" style="display: none" ><p><strong>Settings Saved</strong></p></div>';
 
 			 ?>
 
@@ -1339,7 +1296,7 @@ if( !class_exists("wploti_maintenance_redirect") ) {
 								</div>
 								<div class="modal-footer">
 									<button value="OK" class="button button-primary ok_wploti_confirm" name="ok_wploti_alert">${options.okText}</button>
-									<button value="${options.cancelText}" class="button button-secondary cancel_wploti_confirm" name="cancel_wploti_alert"><?php _e('Cancel', 'maintenance-coming-soon-redirect-animation' ) ?></button>
+									<button value="Cancel" class="button button-secondary cancel_wploti_confirm" name="cancel_wploti_alert">${options.cancelText}</button>
 								</div>
 							</div>
 						</div>`
@@ -1356,6 +1313,36 @@ if( !class_exists("wploti_maintenance_redirect") ) {
 							options.onok();
 							jQuery('.modal').fadeOut('1000');
 						})
+					}
+				}
+				
+				/**
+				 * (js) undim field
+				 *
+				 * @since 1.0.0
+				 * @param string field_id
+				 * @param string default_text
+				 * @return string
+				 */	
+				
+				function wploti_mr_undim_field( field_id, default_text ) {
+					if( jQuery('#'+field_id).val() == default_text ) jQuery('#'+field_id).val('');
+					jQuery('#'+field_id).css('color','#000');
+				}
+
+				/**
+				 * (js) dim field
+				 *
+				 * @since 1.0.0
+				 * @param string field_id
+				 * @param string default_text
+				 * @return string
+				 */
+				
+				function wploti_mr_dim_field( field_id, default_text ) {
+					if( jQuery('#'+field_id).val() == '' ) {
+						jQuery('#'+field_id).val(default_text);
+						jQuery('#'+field_id).css('color','#888');
 					}
 				}
 				
@@ -1383,13 +1370,13 @@ if( !class_exists("wploti_maintenance_redirect") ) {
 				function wploti_mr_add_new_ip () {
 					// validate entries before posting ajax call
 					var error_msg = '';
-					if( jQuery('#wploti_mr_new_ip_name').val() == ''                              ) error_msg += '<?php _e( "You must enter a Name" , "maintenance-coming-soon-redirect-animation"); ?>.\n<br>';
-					if( jQuery('#wploti_mr_new_ip_name').val() == '<?php _e( "Enter Name:" , "maintenance-coming-soon-redirect-animation"); ?>' ) error_msg += '<?php _e( "You must enter a Name" , "maintenance-coming-soon-redirect-animation"); ?>.\n<br>';
-					if( jQuery('#wploti_mr_new_ip_ip'  ).val() == ''                              ) error_msg += '<?php _e( "You must enter an IP" , "maintenance-coming-soon-redirect-animation"); ?>.\n<br>';
-					if( jQuery('#wploti_mr_new_ip_ip'  ).val() == '<?php _e( "Enter IP:" , "maintenance-coming-soon-redirect-animation"); ?>'   ) error_msg += '<?php _e( "You must enter an IP" , "maintenance-coming-soon-redirect-animation"); ?>.\n<br>';
-					if( ValidateIPaddress( jQuery('#wploti_mr_new_ip_ip'  ).val() ) != true   ) error_msg += '<?php _e( "IP address not valid" , "maintenance-coming-soon-redirect-animation"); ?>.\n<br>';
+					if( jQuery('#wploti_mr_new_ip_name').val() == ''                              ) error_msg += '<?php _e( "You must enter a Name" ); ?>.\n<br>';
+					if( jQuery('#wploti_mr_new_ip_name').val() == '<?php _e( "Enter Name:" ); ?>' ) error_msg += '<?php _e( "You must enter a Name" ); ?>.\n<br>';
+					if( jQuery('#wploti_mr_new_ip_ip'  ).val() == ''                              ) error_msg += '<?php _e( "You must enter an IP" ); ?>.\n<br>';
+					if( jQuery('#wploti_mr_new_ip_ip'  ).val() == '<?php _e( "Enter IP:" ); ?>'   ) error_msg += '<?php _e( "You must enter an IP" ); ?>.\n<br>';
+					if( ValidateIPaddress( jQuery('#wploti_mr_new_ip_ip'  ).val() ) != true   ) error_msg += '<?php _e( "IP address not valid" ); ?>.\n<br>';
 					if( error_msg != '' ){							
-						wploti_alert('<?php _e( "There is a problem with the information you have entered" , "maintenance-coming-soon-redirect-animation"); ?>.\n\n' , error_msg )
+						wploti_alert('<?php _e( "There is a problem with the information you have entered" ); ?>.\n\n' , error_msg )
 
 					}else{
 						// prepare ajax data
@@ -1443,14 +1430,14 @@ if( !class_exists("wploti_maintenance_redirect") ) {
 							if( split_response[2] == '1' ){
 								// active
 								jQuery('#wploti_mr_ip_status_' + split_response[1] ).html( 'Yes' );
-								jQuery('#wploti_mr_ip_status_' + split_response[1] + '_action' ).html( '<a href="javascript:wploti_mr_toggle_ip( 0, ' + split_response[1] + ' );"><?php _e( "Disable" , "maintenance-coming-soon-redirect-animation"); ?></a> | ' );
+								jQuery('#wploti_mr_ip_status_' + split_response[1] + '_action' ).html( '<a href="javascript:wploti_mr_toggle_ip( 0, ' + split_response[1] + ' );"><?php _e( "Disable" ); ?></a> | ' );
 							}else{
 								// disabled
 								jQuery('#wploti_mr_ip_status_' + split_response[1] ).html( 'No' );
-								jQuery('#wploti_mr_ip_status_' + split_response[1] + '_action' ).html( '<a href="javascript:wploti_mr_toggle_ip( 1, ' + split_response[1] + ' );"><?php _e( "Enable" , "maintenance-coming-soon-redirect-animation"); ?></a> | ' );
+								jQuery('#wploti_mr_ip_status_' + split_response[1] + '_action' ).html( '<a href="javascript:wploti_mr_toggle_ip( 1, ' + split_response[1] + ' );"><?php _e( "Enable" ); ?></a> | ' );
 							} 
 						}else{
-							wploti_alert( '<?php _e( "There was a database error. Please reload this page" , "maintenance-coming-soon-redirect-animation"); ?>' );
+							wploti_alert( '<?php _e( "There was a database error. Please reload this page" ); ?>' );
 						}
 					});
 				}
@@ -1468,7 +1455,7 @@ if( !class_exists("wploti_maintenance_redirect") ) {
 
 					wploti_confirm.open({
 
-						message: '<?php _e( "You are about to delete the IP address:" , "maintenance-coming-soon-redirect-animation"); ?>\n\n\'' + ip_addr + '\'\n\n',
+						message: '<?php _e( "You are about to delete the IP address:"); ?>\n\n\'' + ip_addr + '\'\n\n',
 						onok: () => {
 								// prepare ajax data
 								var data = {
@@ -1501,18 +1488,18 @@ if( !class_exists("wploti_maintenance_redirect") ) {
 					// validate entries before posting ajax call
 					var error_msg = '';
 					var ak_email = jQuery('#wploti_mr_new_ak_email').val()
-					if( jQuery('#wploti_mr_new_ak_name' ).val() == ''                               ) error_msg += '<?php _e( "You must enter a Name" , "maintenance-coming-soon-redirect-animation"); ?>.<br>\n';
-					if( jQuery('#wploti_mr_new_ak_name' ).val() == '<?php _e( "Enter Name:" , "maintenance-coming-soon-redirect-animation"); ?>'  ) error_msg += '<?php _e( "You must enter a Name" , "maintenance-coming-soon-redirect-animation"); ?>.<br>\n';
-					if( jQuery('#wploti_mr_new_ak_email').val() == ''                               ) error_msg += '<?php _e( "You must enter an Email" , "maintenance-coming-soon-redirect-animation"); ?>.<br>\n';
-					if( jQuery('#wploti_mr_new_ak_email').val() == '<?php _e( "Enter Email:" ); ?>' ) error_msg += '<?php _e( "You must enter an Email" , "maintenance-coming-soon-redirect-animation"); ?>.<br>\n';
+					if( jQuery('#wploti_mr_new_ak_name' ).val() == ''                               ) error_msg += '<?php _e( "You must enter a Name"); ?>.<br>\n';
+					if( jQuery('#wploti_mr_new_ak_name' ).val() == '<?php _e( "Enter Name:" ); ?>'  ) error_msg += '<?php _e( "You must enter a Name"); ?>.<br>\n';
+					if( jQuery('#wploti_mr_new_ak_email').val() == ''                               ) error_msg += '<?php _e( "You must enter an Email"); ?>.<br>\n';
+					if( jQuery('#wploti_mr_new_ak_email').val() == '<?php _e( "Enter Email:" ); ?>' ) error_msg += '<?php _e( "You must enter an Email"); ?>.<br>\n';
 					if( error_msg != '' ){
-						wploti_alert( '<?php _e( "There is a problem with the information you have entered" , "maintenance-coming-soon-redirect-animation"); ?>.\n\n' , error_msg );
+						wploti_alert( '<?php _e( "There is a problem with the information you have entered"); ?>.\n\n' , error_msg );
 						
 					}else{
 
 						wploti_confirm.open({
 
-							message : '<?php _e( "You are about to email an Access Key link to" , "maintenance-coming-soon-redirect-animation"); ?> <b>' + ak_email + '</b> !<br> <?php _e( "If you do not see the email in a few secondes," , "maintenance-coming-soon-redirect-animation") ?> <br> <?php _e("Please check your “junk mail” or “spam” folder." , "maintenance-coming-soon-redirect-animation") ?> \n\n',
+							message : '<?php _e( "You are about to email an Access Key link to "); ?><b>' + ak_email + '</b> !<br> <?php _e( "If you do not see the email in a few secondes,") ?> <br> <?php _e("Please check your “junk mail” or “spam” folder.") ?> \n\n',
 							onok: () => {
 								// prepare ajax data
 								var data = {
@@ -1567,14 +1554,14 @@ if( !class_exists("wploti_maintenance_redirect") ) {
 							if( split_response[2] == '1' ){
 								// active
 								jQuery('#wploti_mr_ak_status_' + split_response[1] ).html( 'Yes' );
-								jQuery('#wploti_mr_ak_status_' + split_response[1] + '_action' ).html( '<a href="javascript:wploti_mr_toggle_ak( 0, ' + split_response[1] + ' );"><?php _e( "Disable" , "maintenance-coming-soon-redirect-animation"); ?></a> | ' );
+								jQuery('#wploti_mr_ak_status_' + split_response[1] + '_action' ).html( '<a href="javascript:wploti_mr_toggle_ak( 0, ' + split_response[1] + ' );"><?php _e( "Disable" ); ?></a> | ' );
 							}else{
 								// disabled
 								jQuery('#wploti_mr_ak_status_' + split_response[1] ).html( 'No' );
-								jQuery('#wploti_mr_ak_status_' + split_response[1] + '_action' ).html( '<a href="javascript:wploti_mr_toggle_ak( 1, ' + split_response[1] + ' );"><?php _e( "Enable" , "maintenance-coming-soon-redirect-animation"); ?></a> | ' );
+								jQuery('#wploti_mr_ak_status_' + split_response[1] + '_action' ).html( '<a href="javascript:wploti_mr_toggle_ak( 1, ' + split_response[1] + ' );"><?php _e( "Enable" ); ?></a> | ' );
 							} 
 						}else{
-							wploti_alert( '<?php _e( "There was a database error. Please reload this page" , "maintenance-coming-soon-redirect-animation"); ?>' , ' ' );
+							wploti_alert( '<?php _e( "There was a database error. Please reload this page" ); ?>' , ' ' );
 						}
 					});
 				}
@@ -1592,7 +1579,7 @@ if( !class_exists("wploti_maintenance_redirect") ) {
 
 					wploti_confirm.open({
 
-						message: '<?php _e( "You are about to delete this Access Key:" , "maintenance-coming-soon-redirect-animation" ); ?>\n\n\'' + ak_name + '\'\n\n',
+						message: '<?php _e( "You are about to delete this Access Key:"); ?>\n\n\'' + ak_name + '\'\n\n',
 						onok: () => {
 								// prepare ajax data
 								var data = {
@@ -1627,7 +1614,7 @@ if( !class_exists("wploti_maintenance_redirect") ) {
 				function wploti_mr_resend_ak ( ak_id, ak_name, ak_email ) {
 					
 					wploti_confirm.open({
-						message : '<?php _e( "You are about to resend an Access Key link to" , "maintenance-coming-soon-redirect-animation" ); ?> <b>' + ak_email + '</b> !<br> <?php _e( "If you do not see the email in a few secondes," , "maintenance-coming-soon-redirect-animation") ?> <br> <?php _e("Please check your “junk mail” or “spam” folder." , "maintenance-coming-soon-redirect-animation" ) ?> \n\n',
+						message : '<?php _e( "You are about to resend an Access Key link to "); ?><b>' + ak_email + '</b> !<br> <?php _e( "If you do not see the email in a few secondes,") ?> <br> <?php _e("Please check your “junk mail” or “spam” folder.") ?> \n\n',
 						onok: () => {
 							// prepare ajax data
 							var data = {
@@ -1639,44 +1626,15 @@ if( !class_exists("wploti_maintenance_redirect") ) {
 							// send ajax request
 							jQuery.post( ajaxurl, data, function(response) {
 								if( response == 'SEND_SUCCESS' ){
-									wploti_alert( '<?php _e( "Notification Sent." , "maintenance-coming-soon-redirect-animation" ); ?>','' );
+									wploti_alert( '<?php _e( "Notification Sent." ); ?>','' );
 								}else{
-									wploti_alert( '<?php _e( "Notification Failure. Please check your server settings." , "maintenance-coming-soon-redirect-animation" ); ?>','' );
+									wploti_alert( '<?php _e( "Notification Failure. Please check your server settings." ); ?>','' );
 								}
 							});
 						}
 					})
 					
 				}
-
-				/**
-				 * (js) RESET SETTINGS
-				 *
-				 * @since 1.0.0
-				 * @return void
-				 */
-
-				jQuery('.wploti_reset_settings').click(function() {
-					var security = jQuery(this).data('security');
-					wploti_confirm.open({						
-						message: '<?php _e( "Please Be careful ! " , "maintenance-coming-soon-redirect-animation" ) . '<br><br>' . _e( "Please Be careful ! " , "maintenance-coming-soon-redirect-animation" ) ?>',
-						onok: () => {
-							jQuery.ajax({
-								url: ajaxurl,
-								data: {
-									action: 'wploti_reset_settings',
-									security: security,
-								},
-								type: 'post',
-								success: function(result, textstatus) {
-									window.location.reload(true);
-								},
-								error: function(result) {
-								},
-							})
-						}
-					})
-				})
 			
 			</script>
 			
@@ -1684,27 +1642,27 @@ if( !class_exists("wploti_maintenance_redirect") ) {
 
 			<div class="wrap">
 				
-				<h1 class="big-title"><?php _e( "Maintenance Redirect" , "maintenance-coming-soon-redirect-animation" )?></h1>
+				<h1 class="big-title">Maintenance Redirect</h1>
 				
-				<p><?php _e( "Make your website in maintenance mode in seconds with great looking animations and configure settings to allow specific users to bypass the maintenance mode functionality in order to preview the site prior to public launch. Any logged in user with WordPress administrator privileges will be allowed to view the site regardless of the settings below." , "maintenance-coming-soon-redirect-animation" ); ?></p>
+				<p><?php _e( "Make your website in maintenance mode in seconds with great looking animations and configure settings to allow specific users to bypass the maintenance mode functionality in order to preview the site prior to public launch. Any logged in user with WordPress administrator privileges will be allowed to view the site regardless of the settings below." ); ?></p>
 				<?php if ( get_option('wploti_notes_notice') ) : ?>
 				<div class=" notice-success is-dismissable" id="wploti_note_notice">
 					<div class="notice-activation-text-wrapper">
 						<div class="note_head">
 							<img class="alert-icon" src="data:image/jpeg;base64,<?php echo esc_attr(base64_encode(file_get_contents( plugin_dir_url( __FILE__ ).'/images/alert-icon.png' ))) ?>" alt="Alert Icon" />
-							<h3 class="main_redirect_msg"><?php _e( "Notes : " , "maintenance-coming-soon-redirect-animation" )?></h3>
+							<h3 class="main_redirect_msg"><?php _e( "Notes : " )?></h3>
 						</div>
 						<ul class="note_text">
-							<li><?php _e( "This plugin will override any other maintenance plugin you use ." , "maintenance-coming-soon-redirect-animation" ); ?></li>
-							<li><?php _e( "All settings are auto-updated , you don't need to save anything ." , "maintenance-coming-soon-redirect-animation" ); ?></li>
+							<li><?php _e( "This plugin will override any other maintenance plugin you use ." ); ?></li>
+							<li><?php _e( "All settings are auto-updated , you don't need to save anything ." ); ?></li>
 						</ul>
 						<div class="wploti-leave-feedback">
-							<div><a href="#dismiss" data-security="<?php echo esc_attr($wploti_ajax_nonce) ?>" name="wploti-activation-dismiss" class="wploti-note-dismiss"><?php _e('Dismiss' , "maintenance-coming-soon-redirect-animation"); ?></a></div>
+							<div><a href="#dismiss" data-security="<?php echo esc_attr($wploti_ajax_nonce) ?>" name="wploti-activation-dismiss" class="wploti-note-dismiss">Dismiss</a></div>
 						</div>
 					</div>
 				</div>
 				<?php endif; ?>						
-				<h3 class="big-title"><?php _e( "Enable Maintenance Mode:" , "maintenance-coming-soon-redirect-animation" ); ?></h3>
+				<h3 class="big-title"><?php _e( "Enable Maintenance Mode:" ); ?></h3>
 				<div class="enable-maintenance-mode">
 					<div class="wploti-maintenance-toggle">
 						<div class="toggle-wrapper">
@@ -1713,38 +1671,29 @@ if( !class_exists("wploti_maintenance_redirect") ) {
 						</div>
 					</div>
 				</div>
-
-				<style>
-					.wploti-maintenance-toggle .toggle:before {
-						content: "<?php _e("Disabled", "maintenance-coming-soon-redirect-animation") ?>";
-					}
-					.wploti-maintenance-toggle .toggle:after {
-						content: "<?php _e("Enabled", "maintenance-coming-soon-redirect-animation") ?>";
-					}
-				</style>
 	
 				<div id="wploti_main_options" style="display: <?php echo ( $this->wploti_active() == '1' ) ? 'block' : 'none'; ?> " >
 					
 					<div class="wploti_mr_admin_section" >
-						<h3 class="big-title"><?php _e( "Header Type:" , "maintenance-coming-soon-redirect-animation" ); ?></h3>
-						<p><?php _e( "When redirect is enabled we can send 2 different header types:" , "maintenance-coming-soon-redirect-animation" ); ?> </p>
+						<h3 class="big-title"><?php _e( "Header Type:" ); ?></h3>
+						<p><?php _e( "When redirect is enabled we can send 2 different header types:" ); ?> </p>
 						
 						<dl>
 							<dt>
 								<input type="radio" id="200" name="wploti_header_type" class="wploti_header_type" data-security="<?php echo esc_attr($wploti_ajax_nonce) ; ?>" <?php checked( get_option('wploti_header_type') , "200" ) ?> value="200">
 								<label for="200">200 OK</label><br>
 							</dt>
-							<dd><?php _e( "Best used for when the site is under development." , "maintenance-coming-soon-redirect-animation" ); ?></dd>
+							<dd><?php _e( "Best used for when the site is under development." ); ?></dd>
 							<dt>
 								<input type="radio" id="503" name="wploti_header_type" class="wploti_header_type" data-security="<?php echo esc_attr($wploti_ajax_nonce) ; ?>" <?php checked( get_option('wploti_header_type') , "503" ) ?> value="503">
-								<label for="503"><?php _e( "503 Service Temporarily Unavailable" , "maintenance-coming-soon-redirect-animation" ); ?></label><br>
+								<label for="503">503 Service Temporarily Unavailable</label><br>
 							</dt>
-							<dd><?php _e( "Best for when the site is temporarily taken offline for small amendments." , "maintenance-coming-soon-redirect-animation" ); ?> <em><?php _e( "If used for a long period of time, 503 can damage your Google ranking." , "maintenance-coming-soon-redirect-animation" ); ?></em></dd>
+							<dd><?php _e( "Best for when the site is temporarily taken offline for small amendments." ); ?> <em><?php _e( "If used for a long period of time, 503 can damage your Google ranking." ); ?></em></dd>
 						</dl>
 					</div>
 					<div class="wploti_mr_admin_section" >
-						<h3 class="big-title"><?php _e( "Unrestricted IP addresses:" , "maintenance-coming-soon-redirect-animation" ); ?>&nbsp;<span class="wploti_mr_small_dim">( <?php _e( "Your IP address is:" , "maintenance-coming-soon-redirect-animation" ); ?>&nbsp;<?php echo $this->get_user_ip(); ?> - <?php _e( "Your Class C is:" , "maintenance-coming-soon-redirect-animation" ); ?>&nbsp;<?php echo $this->get_user_class_c(); ?> )</span></h3>
-						<p><?php _e( "Users with unrestricted IP addresses will bypass maintenance mode entirely. Using this option is useful to an entire office of clients to view the site without needing to jump through any extra hoops." , "maintenance-coming-soon-redirect-animation" ); ?></p> 
+						<h3 class="big-title"><?php _e( "Unrestricted IP addresses:" ); ?>&nbsp;<span class="wploti_mr_small_dim">( <?php _e( "Your IP address is:" ); ?>&nbsp;<?php echo $this->get_user_ip(); ?> - <?php _e( "Your Class C is:" ); ?>&nbsp;<?php echo $this->get_user_class_c(); ?> )</span></h3>
+						<p><?php _e( "Users with unrestricted IP addresses will bypass maintenance mode entirely. Using this option is useful to an entire office of clients to view the site without needing to jump through any extra hoops." ); ?></p> 
 						
 						<div id="wploti_mr_ip_tbl_container">
 							<?php $this->print_unrestricted_ips(); ?>
@@ -1752,8 +1701,8 @@ if( !class_exists("wploti_maintenance_redirect") ) {
 					</div>
 					
 					<div class="wploti_mr_admin_section">
-						<h3 class="big-title"><?php _e( "Access Keys :" , "maintenance-coming-soon-redirect-animation"); ?></h3>
-						<p><?php _e( "You can allow users temporary access by sending them the access key. When a new key is created, a link to create the access key cookie will be emailed to the email address provided. Access can then be revoked either by disabling or deleting the key." , "maintenance-coming-soon-redirect-animation" ); ?></p>
+						<h3 class="big-title"><?php _e( "Access Keys:" ); ?></h3>
+						<p><?php _e( "You can allow users temporary access by sending them the access key. When a new key is created, a link to create the access key cookie will be emailed to the email address provided. Access can then be revoked either by disabling or deleting the key." ); ?></p>
 						
 						<div id="wploti_mr_ak_tbl_container">
 							<?php $this->print_access_keys(); ?>
@@ -1761,32 +1710,31 @@ if( !class_exists("wploti_maintenance_redirect") ) {
 					</div>
 					
 					<div class="wploti_mr_admin_section">	
-						<h3 class="big-title"><?php _e( "Maintenance Animation :" , "maintenance-coming-soon-redirect-animation"); ?></h3>
+						<h3 class="big-title"><?php _e( "Maintenance Animation :" ); ?></h3>
 						
-						<h4 class="small-title"><?php _e( "Active Animation :" , "maintenance-coming-soon-redirect-animation"); ?></h4>
+						<h4 class="small-title"><?php _e( "Active Animation :" ); ?></h4>
 
 						<div class="selected-animation">										
 							<lottie-player autoplay="true" loop src="<?php echo wploti_animation_dir . esc_attr( get_option("wploti_animation", 'default-animation.json') ) ?>" class="lottieanimation"></lottie-player>
 						</div>
 
-						<h4 class="small-title"><?php _e( "Here you can select your Animation :" , "maintenance-coming-soon-redirect-animation" ); ?></h4>
+						<h4 class="small-title"><?php _e( "Here you can select your Animation :" ); ?></h4>
 						<?php $animations = array_slice(scandir(__DIR__.'/animations'),2); ?>
 						<div animations-count="<?php echo esc_attr(count($animations)); ?>" class="animations"></div>
 		
 						<div id ="load-animations-message"></div>
 					
 						<div id="wploti_bottom_message">
-							<strong><?php _e( "Maintenance Mode Message (optional) :" , "maintenance-coming-soon-redirect-animation"); ?></strong>
-							<p><?php _e( "You can write a brief message that will be displayed under animation :" , "maintenance-coming-soon-redirect-animation"); ?></p>
-							<?php 	$wploti_message = __( 'This site is currently undergoing maintenance. Please check back later', 'maintenance-coming-soon-redirect-animation' );  ?>	
-							<p><input type="text" data-security="<?php echo esc_attr($wploti_ajax_nonce) ; ?>" name="wploti_message" value="<?php echo esc_attr( get_option('wploti_message', $wploti_message) ); ?>" id="wploti_message" style="width:100%"></p>
+							<strong><?php _e( "Maintenance Mode Message (optional) :" ); ?></strong>
+							<p><?php _e( "You can write a brief message that will be displayed under animation :" ); ?></p>
+							<p><input type="text" data-security="<?php echo esc_attr($wploti_ajax_nonce) ; ?>" name="wploti_message" value="<?php echo esc_attr( get_option('wploti_message') ); ?>" id="wploti_message" style="width:100%"></p>
 						</div>
 					</div>
 
 					<div class="submit">
 						<?php wp_nonce_field( 'wploti_nonce' ); ?>
 						<!-- <input type="submit" name="update_wp_maintenance_redirect_settings" class="wp-core-ui button-primary" value="<?php _e( 'Update Settings' ); ?>" /> -->
-						<input type="button" value="<?php esc_attr_e( 'Reset settings', 'maintenance-coming-soon-redirect-animation' ); ?>" class="button button-secondary wploti_reset_settings" data-security="<?php echo esc_attr($wploti_ajax_nonce) ; ?>" name="submit" />
+						<input type="button" value="<?php esc_attr_e( 'Reset settings', 'wploti-maintenance-mode' ); ?>" class="button button-secondary wploti_reset_settings" data-security="<?php echo esc_attr($wploti_ajax_nonce) ; ?>" name="submit" />
 					</div>
 
 				</div>
@@ -1827,7 +1775,7 @@ if (!function_exists("wploti_maintenance_redirect_ap")) {
 			
 			if (function_exists('add_options_page')) {
 				add_options_page( 
-					__("Maintenance Redirect Options" , 'maintenance-coming-soon-redirect-animation'),
+					__("Maintenance Redirect Options" ),
 					__("Maintenance" ), 
 						'manage_options', 
 						'wploti-settings', 
@@ -1861,8 +1809,6 @@ if( isset( $my_wploti_maintenance_redirect ) ) {
 	//enqueue styles and scripts
 	add_action( 'admin_enqueue_scripts', array( $my_wploti_maintenance_redirect ,'wploti_enqueue_style_and_script_admin' ) );	
 	add_action( 'wp_enqueue_scripts', array( $my_wploti_maintenance_redirect ,'wploti_enqueue_style_and_script_public' ) );	
-	//register script for translation
-	add_action( 'admin_enqueue_scripts', array( $my_wploti_maintenance_redirect ,'wploti_translations_script' ) );	
 
 	add_filter( 'plugin_action_links_'.plugin_basename(__FILE__), array( $my_wploti_maintenance_redirect, 'plugin_settings_link' ) );
 	add_filter( 'site_status_tests', array( $my_wploti_maintenance_redirect, 'wploti_add_site_health' ) );
@@ -1885,8 +1831,5 @@ if( isset( $my_wploti_maintenance_redirect ) ) {
 
 	// Reset Settings action
 	add_action( 'wp_ajax_wploti_reset_settings', array( $my_wploti_maintenance_redirect, 'reset_plugin_settings' ) );
-
-	// Translation
-    add_action( 'plugins_loaded', array( $my_wploti_maintenance_redirect, 'wploti_translation' ));
 
 }

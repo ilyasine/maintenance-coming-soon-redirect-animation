@@ -15,16 +15,14 @@ img.main-logo {
 .wrap > h1.big-title {
     display: block !important;
 }
-
 .wploti-leave-feedback {
     text-align: right;
     position: absolute;
     right: 1em;
     bottom: 1em;
 }
-
 /* Animations Container */
-.animations{  
+.animations{
     display: flex;
     grid-gap: 1rem;
     flex-wrap: wrap;
@@ -66,7 +64,7 @@ img.main-logo {
     width: 100%;
     height: 100%;
     background: #2271b124;
-    cursor: auto;  
+    cursor: auto;
 }
 .selected-bg{
     z-index: 1000;
@@ -83,6 +81,8 @@ img.main-logo {
 }
 .select-btn, .selected-btn{
     background: #2271b1;
+    width: 100px;
+    text-align: center;
     color: #ffffff;
     padding: 3px 10px;
     cursor: pointer;
@@ -99,8 +99,8 @@ img.main-logo {
     font-family: cursive;
 }
 .small-title{
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
-} 
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif 
+}
 #wploti_method_message{
     margin-top: 1rem;
 }
@@ -174,12 +174,10 @@ input[type=text]:focus{
     justify-content: center;
     padding: 30px;
 }
-#load-animations-message .button{ 
+#load-animations-message .button{
     cursor: default;
 }
-
 /* Dialog box */
-
 .modal {
     position: fixed;
     inset: 0px;
@@ -246,60 +244,59 @@ input[type=text]:focus{
     border-radius: 0px 0px 12px 12px;
     z-index: 1;
 }
-.modal-footer button{
-    width: 60px;
-}
-
 @keyframes zigzag {
     0% {
         transform: scale(1);
-    }
+   }
     25% {
         transform: scale(0.9);
-    }
+   }
     50% {
         transform: translateX(1);
-    }
+   }
     100% {
         transform: translateX(1.1);
-    }
+   }
 }
-
 @media screen and (max-width: 1366px) {
     .wploti-leave-feedback {
         position: relative;
         bottom: initial;
         margin: 1em 0;
-    }
+   }
 }
 @media screen and (max-width: 600px) {
     #wploti_mr_enabled_notice{
         flex-direction: column;
-    }
+   }
 }
 @media screen and (max-width: 1100px) {
     .animation-grid{
         flex-basis: calc(33.33% - 15px);
-    }
+   }
 }
 @media screen and (max-width: 800px) {
     .animation-grid{
         flex-basis: calc(50% - 15px);
-    }
+   }
+}
+@media screen and (max-width: 480px) {
+    .animation-grid{
+        flex-basis: calc(100% - 15px);
+   }
+   .selected-animation{
+        width: 100%;
+   }
 }
 @media screen and (min-width: 1920px) {
     .animation-grid{
         flex-basis: calc(20% - 15px);
-    }
+   }
 }
-
 /* toggle */
-
-
 .wploti-maintenance-toggle .toggle, .wploti-maintenance-toggle .toggle-wrapper {
     display: inline-block;
 }
-
 .wploti-maintenance-toggle .toggle {
     position: relative;
     width: 340px;
@@ -312,20 +309,17 @@ input[type=text]:focus{
     border-radius: 6em;
     background: #f6f7f7;
 }
-
 .wploti-maintenance-toggle .toggle:after, .wploti-maintenance-toggle .toggle:before {
     position: absolute;
     line-height: 50px;
     font-size: 1em;
     z-index: 2;
     -o-transition: all .2s ease-in-out;
-    transition: all .2s ease-in-out
+    transition: all .2s ease-in-out 
 }
-
 .wploti-maintenance-toggle input[type=checkbox].toggle-checkbox {
-    display: none
+    display: none 
 }
-
 .wploti-maintenance-toggle .toggle_handler {
     display: inline-block;
     position: relative;
@@ -342,32 +336,22 @@ input[type=text]:focus{
     transform: translateX(0);
     border-radius: 6em;
 }
-
 .wploti-maintenance-toggle .toggle-checkbox:checked+.toggle .toggle_handler {
     -webkit-transform: translateX(160px);
     -ms-transform: translateX(160px);
     transform: translateX(160px);
     background: #00a32a;
 }
-
 .wploti-maintenance-toggle .toggle:before {
-    content: "Disabled";
     left: 63px;
-    color: #fff
+    color: #fff 
 }
-
 .wploti-maintenance-toggle .toggle-checkbox:checked+.toggle:before, .wploti-maintenance-toggle .toggle:after {
     color: #444;
 }
-
 .wploti-maintenance-toggle .toggle:after {
-    content: "Enabled";
     right: 68px;
 }
-
 .wploti-maintenance-toggle .toggle-checkbox:checked+.toggle:after {
     color: #fff;
-} 
-
-
-
+}
