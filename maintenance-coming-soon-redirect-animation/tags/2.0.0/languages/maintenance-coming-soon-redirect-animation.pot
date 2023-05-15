@@ -1,0 +1,346 @@
+# Copyright (C) 2022 Yassine Idrissi
+# This file is distributed under the same license as the Maintenance & Coming Soon Redirect Animation package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Maintenance & Coming Soon Redirect Animation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-09-29 21:58+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Yassine Idrissi <ydrissi9@gmail.com>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Domain: maintenance-coming-soon-redirect-animation" 
+
+#: wploti_maintenance_redirect.php:123
+msgid "This site is currently undergoing maintenance. Please check back later"
+msgstr ""
+
+#: wploti_maintenance_redirect.php:228
+msgid "Maintenance Status"
+msgstr ""
+
+#: wploti_maintenance_redirect.php:330
+msgid "Selected"
+msgstr ""
+
+#: wploti_maintenance_redirect.php:333
+msgid "Select"
+msgstr ""
+
+#: wploti_maintenance_redirect.php:513
+msgid "You do not have access to this resource."
+msgstr ""
+
+#: wploti_maintenance_redirect.php:749
+msgid "Unable to add IP because of a database error. Please reload the page."
+msgstr ""
+
+#: wploti_maintenance_redirect.php:825
+msgid "Access Key Link for %s"
+msgstr ""
+
+#: wploti_maintenance_redirect.php:826
+msgid "The following link will provide you temporary access to %s:"
+msgstr ""
+
+#: wploti_maintenance_redirect.php:827
+msgid "Please note that you must have cookies enabled for this to work."
+msgstr ""
+
+#: wploti_maintenance_redirect.php:834
+msgid "Unable to add Access Key because of a database error. Please reload the page."
+msgstr ""
+
+#: wploti_maintenance_redirect.php:885
+msgid "Unable to delete Access Key because of a database error. Please reload the page."
+msgstr ""
+
+#: wploti_maintenance_redirect.php:993
+msgid "Name"
+msgstr ""
+
+#: wploti_maintenance_redirect.php:935
+msgid "Creation Date"
+msgstr ""
+
+#: wploti_maintenance_redirect.php:972
+msgid "Disable"
+msgstr ""
+
+#: wploti_maintenance_redirect.php:974
+msgid "Enable"
+msgstr ""
+
+#: wploti_maintenance_redirect.php:978
+msgid "Delete"
+msgstr ""
+
+#: wploti_maintenance_redirect.php:990
+msgid "Enter Name:"
+msgstr ""
+
+#: wploti_maintenance_redirect.php:993
+msgid "Enter IP:"
+msgstr ""
+
+#: wploti_maintenance_redirect.php:1071
+msgid "Resend Code"
+msgstr ""
+
+#: wploti_maintenance_redirect.php:1071
+msgid "Yes"
+msgstr ""
+
+#: wploti_maintenance_redirect.php:1071
+msgid "No"
+msgstr ""
+
+#: wploti_maintenance_redirect.php:1087
+msgid "Enter Email:"
+msgstr ""
+
+#: wploti_maintenance_redirect.php:999
+msgid "Add New IP"
+msgstr ""
+
+#: wploti_maintenance_redirect.php:1022
+msgid "Email"
+msgstr ""
+
+#: wploti_maintenance_redirect.php:1023
+msgid "Access Key"
+msgstr ""
+
+#: wploti_maintenance_redirect.php:1094
+msgid "Add New Access Key"
+msgstr ""
+
+#: wploti_maintenance_redirect.php:1118
+msgid "Settings"
+msgstr ""
+
+#: wploti_maintenance_redirect.php:1123
+msgid "Thank you for installing Maintenance & Coming Soon Redirect Animation Plugin!"
+msgstr ""
+
+#: wploti_maintenance_redirect.php:1124
+msgid "You can activate the Maintenance Mode in"
+msgstr ""
+
+#: wploti_maintenance_redirect.php:1124
+msgid "or by Maintenance Status Top bar icon and choose your animation !"
+msgstr ""
+
+#: wploti_maintenance_redirect.php:1124
+msgid "Dismiss"
+msgstr ""
+
+#: wploti_maintenance_redirect.php:1204
+msgid "Maintenance Redirect is not enabled"
+msgstr ""
+
+#: wploti_maintenance_redirect.php:1212
+msgid "Maintenance is not enabled and your site is visible to visitors."
+msgstr ""
+
+#: wploti_maintenance_redirect.php:1228
+msgid "Maintenance is enabled and your site is not visible to visitors."
+msgstr ""
+
+#: wploti_maintenance_redirect.php:1228
+msgid "Maintenance Redirect is enabled"
+msgstr ""
+
+#: wploti_maintenance_redirect.php:1233
+msgid "Maintenance is enabled"
+msgstr ""
+
+#: wploti_maintenance_redirect.php:1236
+msgid "Maintenance is enabled and your site is not visible to visitors. Your redirection type is set to 503, which could harm your Google ranking if left on for any length of time."
+msgstr ""
+
+#: wploti_maintenance_redirect.php:1246
+msgid "Settings Saved"
+msgstr ""
+
+#: wploti_maintenance_redirect.php:1319
+msgid "Cancel"
+msgstr ""
+
+#: wploti_maintenance_redirect.php:1369
+msgid "There is a problem with the information you have entered"
+msgstr ""
+
+#: wploti_maintenance_redirect.php:1363
+msgid "You must enter a Name"
+msgstr ""
+
+#: wploti_maintenance_redirect.php:1363
+msgid "You must enter an IP"
+msgstr ""
+
+#: wploti_maintenance_redirect.php:1363
+msgid "IP address not valid"
+msgstr ""
+
+#: wploti_maintenance_redirect.php:1484
+msgid "You must enter an Email"
+msgstr ""
+
+#: wploti_maintenance_redirect.php:1521
+msgid "You are about to email an Access Key link to"
+msgstr ""
+
+#: wploti_maintenance_redirect.php:1607
+msgid "You are about to resend an Access Key link to"
+msgstr ""
+
+#: wploti_maintenance_redirect.php:1448
+msgid "You are about to delete the IP address:"
+msgstr ""
+
+#: wploti_maintenance_redirect.php:1521
+msgid "If you do not see the email in a few secondes,"
+msgstr ""
+
+#: wploti_maintenance_redirect.php:1521
+msgid "Please check your “junk mail” or “spam” folder."
+msgstr ""
+
+#: wploti_maintenance_redirect.php:1572
+msgid "You are about to delete this Access Key:"
+msgstr ""
+
+#: wploti_maintenance_redirect.php:1619
+msgid "Notification Sent."
+msgstr ""
+
+#: wploti_maintenance_redirect.php:1621
+msgid "Notification Failure. Please check your server settings."
+msgstr ""
+
+#: wploti_maintenance_redirect.php:1646
+msgid "Reset settings"
+msgstr ""
+
+#: wploti_maintenance_redirect.php:1659
+msgid "Make your website in maintenance mode in seconds with great looking animations and configure settings to allow specific users to bypass the maintenance mode functionality in order to preview the site prior to public launch. Any logged in user with WordPress administrator privileges will be allowed to view the site regardless of the settings below."
+msgstr ""
+
+#: wploti_maintenance_redirect.php:1672
+msgid "Notes : "
+msgstr ""
+
+#: wploti_maintenance_redirect.php:1675
+msgid "This plugin will override any other maintenance plugin you use ."
+msgstr ""
+
+#: wploti_maintenance_redirect.php:1676
+msgid "All settings are auto-updated , you don't need to save anything ."
+msgstr ""
+
+#: wploti_maintenance_redirect.php:1684
+msgid "Enable Maintenance Mode:"
+msgstr ""
+
+#: wploti_maintenance_redirect.php:1686
+msgid "Maintenance Redirect"
+msgstr ""
+
+#: wploti_maintenance_redirect.php:1697
+msgid "Header Type:"
+msgstr ""
+
+#: wploti_maintenance_redirect.php:1696
+msgid "Disabled"
+msgstr ""
+
+#: wploti_maintenance_redirect.php:1699
+msgid "Enabled"
+msgstr ""
+
+#: wploti_maintenance_redirect.php:1698
+msgid "When redirect is enabled we can send 2 different header types:"
+msgstr ""
+
+#: wploti_maintenance_redirect.php:1705
+msgid "Best used for when the site is under development."
+msgstr ""
+
+#: wploti_maintenance_redirect.php:1710
+msgid "Best for when the site is temporarily taken offline for small amendments."
+msgstr ""
+
+#: wploti_maintenance_redirect.php:1710
+msgid "If used for a long period of time, 503 can damage your Google ranking."
+msgstr ""
+
+#: wploti_maintenance_redirect.php:1714
+msgid "Unrestricted IP addresses:"
+msgstr ""
+
+#: wploti_maintenance_redirect.php:1714
+msgid "Your IP address is:"
+msgstr ""
+
+#: wploti_maintenance_redirect.php:1714
+msgid "Your Class C is:"
+msgstr ""
+
+#: wploti_maintenance_redirect.php:1715
+msgid "Users with unrestricted IP addresses will bypass maintenance mode entirely. Using this option is useful to an entire office of clients to view the site without needing to jump through any extra hoops."
+msgstr ""
+
+#: wploti_maintenance_redirect.php:1717
+msgid "503 Service Temporarily Unavailable"
+msgstr ""
+
+#: wploti_maintenance_redirect.php:1723
+msgid "Access Keys :"
+msgstr ""
+
+#: wploti_maintenance_redirect.php:1724
+msgid "You can allow users temporary access by sending them the access key. When a new key is created, a link to create the access key cookie will be emailed to the email address provided. Access can then be revoked either by disabling or deleting the key."
+msgstr ""
+
+#: wploti_maintenance_redirect.php:1732
+msgid "Maintenance Animation :"
+msgstr ""
+
+#: wploti_maintenance_redirect.php:1734
+msgid "Active Animation :"
+msgstr ""
+
+#: wploti_maintenance_redirect.php:1740
+msgid "Here you can select your Animation :"
+msgstr ""
+
+#: wploti_maintenance_redirect.php:1747
+msgid "Maintenance Mode Message (optional) :"
+msgstr ""
+
+#: wploti_maintenance_redirect.php:1748
+msgid "You can write a brief message that will be displayed under animation :"
+msgstr ""
+
+# Javascript Strings #
+
+#: wploti_maintenance_redirect.php:483
+msgid "Please Be careful"
+msgstr ""
+
+#: wploti_maintenance_redirect.php:484
+msgid "This option will reset all your selections to defaults options and will delete the IP addresses and access keys as well"
+msgstr ""
+
+#: wploti_maintenance_redirect.php:485
+msgid "Please Wait"
+msgstr ""
+
+
+
+

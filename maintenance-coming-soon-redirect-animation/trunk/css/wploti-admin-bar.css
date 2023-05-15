@@ -1,9 +1,4 @@
-.wploti_menu_image{
-    width: 20px !important;
-    height: 32px !important;
-    background-repeat: no-repeat;
-    background-position: center;
-}
+
 .wploti_menu_text{
     color: white;
 }
@@ -14,11 +9,38 @@
     margin-right: 5px;
 }
 /* Top bar Status */
+#wpadminbar .wploti_animation_state{
+    max-width: 30px;
+    margin-right: 8px;
+  }
 #wpadminbar #wp-admin-bar-wploti-activation-status a {
     padding-left: 30px;
 }
 #wpadminbar #wp-admin-bar-wploti-activation-status .toggle-wrapper {
     display: inline-block;
+}
+#wp-admin-bar-wploti-preview .wploti_preview{
+    position: relative;
+    float: left;
+    display: flex;
+    align-items: center;
+    margin-right: 5px !important;
+    font: normal 20px/1 dashicons !important;
+    padding: 4px 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-image: none!important;
+}
+#wpadminbar .ab-top-secondary .menupop .ab-sub-wrapper {
+    right: auto;
+    left: 0;
+    min-width: 66%;
+}
+#wpadminbar #wp-admin-bar-wploti-settings .wploti_settings_img{
+    width: 22px;
+    background-size: 22px;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 #wpadminbar #wp-admin-bar-wploti-activation-status #wploti-toggle-adminbar {
     cursor: pointer;
@@ -26,7 +48,6 @@
     position: relative;
     width: 88px;
     height: 32px;
-    margin-top: -2px;
     font-weight: 600;
     background: transparent;
     -webkit-transition: all 200ms ease-in-out;

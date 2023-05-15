@@ -1,0 +1,406 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Maintenance & Coming Soon Redirect Animation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-09-29 21:58+0000\n"
+"PO-Revision-Date: 2022-10-04 07:17+0000\n"
+"Last-Translator: \n"
+"Language-Team: Français\n"
+"Language: fr_FR\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Domain: maintenance-coming-soon-redirect-animation"
+
+#: wploti_maintenance_redirect.php:1717
+msgid "503 Service Temporarily Unavailable"
+msgstr "503 Service temporairement indisponible"
+
+#: wploti_maintenance_redirect.php:1023
+msgid "Access Key"
+msgstr "Clé d'accès"
+
+#: wploti_maintenance_redirect.php:825
+msgid "Access Key Link for %s"
+msgstr "Lien de la clé d'accès pour %s"
+
+#: wploti_maintenance_redirect.php:1723
+#| msgid "Access Keys:"
+msgid "Access Keys :"
+msgstr "Les Clés d'accès :"
+
+#: wploti_maintenance_redirect.php:1734
+msgid "Active Animation :"
+msgstr "L’ animation active :"
+
+#: wploti_maintenance_redirect.php:1094
+msgid "Add New Access Key"
+msgstr "Ajouter une nouvelle clé d'accès"
+
+#: wploti_maintenance_redirect.php:999
+msgid "Add New IP"
+msgstr "Ajouter une nouvelle adresse IP"
+
+#: wploti_maintenance_redirect.php:1676
+msgid "All settings are auto-updated , you don't need to save anything ."
+msgstr ""
+"Tous les paramètres sont mis à jour automatiquement, vous n'avez rien à "
+"enregistrer."
+
+#: wploti_maintenance_redirect.php:1710
+msgid ""
+"Best for when the site is temporarily taken offline for small amendments."
+msgstr ""
+"Parfait lorsque le site est temporairement mis hors ligne pour de petites "
+"modifications."
+
+#: wploti_maintenance_redirect.php:1705
+msgid "Best used for when the site is under development."
+msgstr ""
+"A utiliser de préférence lorsque le site est en cours de développement."
+
+#: wploti_maintenance_redirect.php:1319
+msgid "Cancel"
+msgstr "Annuler"
+
+#: wploti_maintenance_redirect.php:935
+msgid "Creation Date"
+msgstr "Date de création"
+
+#: wploti_maintenance_redirect.php:978
+msgid "Delete"
+msgstr "Supprimer"
+
+#: wploti_maintenance_redirect.php:972
+msgid "Disable"
+msgstr "Désactiver"
+
+#: wploti_maintenance_redirect.php:1696
+msgid "Disabled"
+msgstr "Désactivé"
+
+#: wploti_maintenance_redirect.php:1124
+msgid "Dismiss"
+msgstr "Rejeter"
+
+#: wploti_maintenance_redirect.php:1022
+msgid "Email"
+msgstr "Email"
+
+#: wploti_maintenance_redirect.php:974
+msgid "Enable"
+msgstr "Activer"
+
+#: wploti_maintenance_redirect.php:1684
+msgid "Enable Maintenance Mode:"
+msgstr "Activer le mode de maintenance :"
+
+#: wploti_maintenance_redirect.php:1699
+msgid "Enabled"
+msgstr "Activé"
+
+#: wploti_maintenance_redirect.php:1087
+msgid "Enter Email:"
+msgstr "Saisir l’adresse e-mail :"
+
+#: wploti_maintenance_redirect.php:993
+msgid "Enter IP:"
+msgstr "Saisir une adresse IP:"
+
+#: wploti_maintenance_redirect.php:990
+msgid "Enter Name:"
+msgstr "Saisir un Nom:"
+
+#: wploti_maintenance_redirect.php:1697
+msgid "Header Type:"
+msgstr "Type d'en-tête :"
+
+#: wploti_maintenance_redirect.php:1740
+msgid "Here you can select your Animation :"
+msgstr "Ici vous pouvez sélectionner votre Animation :"
+
+#: wploti_maintenance_redirect.php:1710
+msgid "If used for a long period of time, 503 can damage your Google ranking."
+msgstr ""
+"S’il est utilisé pendant une longue période, 503 peut nuire à votre "
+"classement Google."
+
+#: wploti_maintenance_redirect.php:1521
+msgid "If you do not see the email in a few secondes,"
+msgstr "Si vous ne voyez pas l’e-mail dans quelques secondes,"
+
+#: wploti_maintenance_redirect.php:1363
+msgid "IP address not valid"
+msgstr "Adresse IP non valide"
+
+#: wploti_maintenance_redirect.php:1732
+msgid "Maintenance Animation :"
+msgstr "Animation de Maintenance  :"
+
+#: wploti_maintenance_redirect.php:1233
+msgid "Maintenance is enabled"
+msgstr "Le mode maintenance est activé"
+
+#: wploti_maintenance_redirect.php:1228
+msgid "Maintenance is enabled and your site is not visible to visitors."
+msgstr ""
+"La maintenance est activée et votre site n'est pas visible pour les "
+"visiteurs."
+
+#: wploti_maintenance_redirect.php:1236
+msgid ""
+"Maintenance is enabled and your site is not visible to visitors. Your "
+"redirection type is set to 503, which could harm your Google ranking if left "
+"on for any length of time."
+msgstr ""
+"La maintenance est activée et votre site n'est pas visible pour les "
+"visiteurs. Votre type de redirection est défini sur 503, ce qui pourrait "
+"nuire à votre classement Google s'il reste activé pendant un certain temps."
+
+#: wploti_maintenance_redirect.php:1212
+msgid "Maintenance is not enabled and your site is visible to visitors."
+msgstr ""
+"La maintenance n’est pas activée et votre site est visible par les visiteurs."
+
+#: wploti_maintenance_redirect.php:1747
+msgid "Maintenance Mode Message (optional) :"
+msgstr "Message du mode maintenance (optionnel) :"
+
+#: wploti_maintenance_redirect.php:1686
+msgid "Maintenance Redirect"
+msgstr "Redirection de maintenance"
+
+#: wploti_maintenance_redirect.php:1228
+msgid "Maintenance Redirect is enabled"
+msgstr "Le redirection de maintenance est activée"
+
+#: wploti_maintenance_redirect.php:1204
+msgid "Maintenance Redirect is not enabled"
+msgstr "La redirection de maintenance n’est pas activée"
+
+#: wploti_maintenance_redirect.php:228
+msgid "Maintenance Status"
+msgstr "Statut de maintenance"
+
+#: wploti_maintenance_redirect.php:1659
+msgid ""
+"Make your website in maintenance mode in seconds with great looking "
+"animations and configure settings to allow specific users to bypass the "
+"maintenance mode functionality in order to preview the site prior to public "
+"launch. Any logged in user with WordPress administrator privileges will be "
+"allowed to view the site regardless of the settings below."
+msgstr ""
+"Mettez votre site Web en mode maintenance en quelques secondes avec de "
+"superbes animations et configurez les paramètres pour permettre à des "
+"utilisateurs spécifiques de contourner la fonctionnalité du mode maintenance "
+"afin de prévisualiser le site avant le lancement public. Tout utilisateur "
+"connecté avec des privilèges d'administrateur WordPress sera autorisé à "
+"afficher le site, quels que soient les paramètres ci-dessous."
+
+#: wploti_maintenance_redirect.php:993
+msgid "Name"
+msgstr "Nom"
+
+#: wploti_maintenance_redirect.php:1071
+msgid "No"
+msgstr "Non"
+
+#: wploti_maintenance_redirect.php:1672
+msgid "Notes : "
+msgstr "Remarques :"
+
+#: wploti_maintenance_redirect.php:1621
+msgid "Notification Failure. Please check your server settings."
+msgstr ""
+"Échec de la notification. Veuillez vérifier les paramètres de votre serveur."
+
+#: wploti_maintenance_redirect.php:1619
+msgid "Notification Sent."
+msgstr "Notification envoyée."
+
+#: wploti_maintenance_redirect.php:1124
+msgid "or by Maintenance Status Top bar icon and choose your animation !"
+msgstr ""
+"ou par l’icône de la barre supérieure de l’état de la maintenance et "
+"choisissez votre animation !"
+
+# Javascript Strings #
+#: wploti_maintenance_redirect.php:483
+msgid "Please Be careful"
+msgstr "Attention"
+
+#: wploti_maintenance_redirect.php:1521
+msgid "Please check your “junk mail” or “spam” folder."
+msgstr "Veuillez vérifier votre dossier \"courrier indésirable\" ou \"spam\"."
+
+#: wploti_maintenance_redirect.php:827
+msgid "Please note that you must have cookies enabled for this to work."
+msgstr ""
+"Veuillez noter que vous devez activer les cookies pour que cela fonctionne."
+
+#: wploti_maintenance_redirect.php:485
+msgid "Please Wait"
+msgstr "Veuillez patienter"
+
+#: wploti_maintenance_redirect.php:1071
+msgid "Resend Code"
+msgstr "Renvoyer la Clé d’accès"
+
+#: wploti_maintenance_redirect.php:1646
+msgid "Reset settings"
+msgstr "Réinitialiser les réglages"
+
+#: wploti_maintenance_redirect.php:333
+msgid "Select"
+msgstr "Sélectionner"
+
+#: wploti_maintenance_redirect.php:330
+msgid "Selected"
+msgstr "Choisie"
+
+#: wploti_maintenance_redirect.php:1118
+msgid "Settings"
+msgstr "Réglages"
+
+#: wploti_maintenance_redirect.php:1246
+msgid "Settings Saved"
+msgstr "Paramètres sauvegardés"
+
+#: wploti_maintenance_redirect.php:1123
+msgid ""
+"Thank you for installing Maintenance & Coming Soon Redirect Animation Plugin!"
+msgstr ""
+"Merci d'avoir installé le plugin Maintenance & Coming Soon Redirect "
+"Animation !"
+
+#: wploti_maintenance_redirect.php:826
+msgid "The following link will provide you temporary access to %s:"
+msgstr "Le lien suivant vous fournira un accès temporaire à %s :"
+
+#: wploti_maintenance_redirect.php:1369
+msgid "There is a problem with the information you have entered"
+msgstr "Il y a un problème avec les informations que vous avez saisies"
+
+#: wploti_maintenance_redirect.php:484
+msgid ""
+"This option will reset all your selections to defaults options and will "
+"delete the IP addresses and access keys as well"
+msgstr ""
+"Cette option réinitialisera toutes vos sélections aux options par défaut et "
+"supprimera également les adresses IP et les clés d'accès."
+
+#: wploti_maintenance_redirect.php:1675
+msgid "This plugin will override any other maintenance plugin you use ."
+msgstr ""
+"Ce plugin remplacera tout autre plugin de maintenance que vous utilisez."
+
+#: wploti_maintenance_redirect.php:123
+msgid "This site is currently undergoing maintenance. Please check back later"
+msgstr "Ce site est actuellement en maintenance. Veuillez revenir plus tard"
+
+#: wploti_maintenance_redirect.php:834
+msgid ""
+"Unable to add Access Key because of a database error. Please reload the page."
+msgstr ""
+"Impossible d’ajouter la clé d'accès en raison d'une erreur de base de "
+"données. Veuillez recharger la page."
+
+#: wploti_maintenance_redirect.php:749
+msgid "Unable to add IP because of a database error. Please reload the page."
+msgstr ""
+"Impossible d’ajouter l’adresse IP en raison d'une erreur de base de données. "
+"Veuillez recharger la page."
+
+#: wploti_maintenance_redirect.php:885
+msgid ""
+"Unable to delete Access Key because of a database error. Please reload the "
+"page."
+msgstr ""
+"Impossible de supprimer la clé d’accès en raison d'une erreur de base de "
+"données. Veuillez recharger la page."
+
+#: wploti_maintenance_redirect.php:1714
+msgid "Unrestricted IP addresses:"
+msgstr "Adresses IP sans restriction :"
+
+#: wploti_maintenance_redirect.php:1715
+msgid ""
+"Users with unrestricted IP addresses will bypass maintenance mode entirely. "
+"Using this option is useful to an entire office of clients to view the site "
+"without needing to jump through any extra hoops."
+msgstr ""
+"Les utilisateurs avec des adresses IP sans restriction contourneront "
+"entièrement le mode de maintenance. L’utilisation de cette option est utile "
+"à tout un bureau de clients pour afficher le site sans avoir à passer par "
+"des étapes supplémentaires."
+
+#: wploti_maintenance_redirect.php:1698
+msgid "When redirect is enabled we can send 2 different header types:"
+msgstr ""
+"Lorsque la redirection est activée, nous pouvons envoyer 2 types d'en-tête "
+"différents :"
+
+#: wploti_maintenance_redirect.php:1071
+msgid "Yes"
+msgstr "Oui"
+
+#: wploti_maintenance_redirect.php:1448
+msgid "You are about to delete the IP address:"
+msgstr "Vous êtes sur le point de supprimer l’adresse IP :"
+
+#: wploti_maintenance_redirect.php:1572
+msgid "You are about to delete this Access Key:"
+msgstr "Vous êtes sur le point de supprimer cette clé d’accès :"
+
+#: wploti_maintenance_redirect.php:1521
+msgid "You are about to email an Access Key link to"
+msgstr "Vous êtes sur le point d’envoyer par e-mail un lien de clé d’accès à"
+
+#: wploti_maintenance_redirect.php:1607
+msgid "You are about to resend an Access Key link to"
+msgstr "Vous êtes sur le point de renvoyer un lien de clé d’accès à"
+
+#: wploti_maintenance_redirect.php:1124
+msgid "You can activate the Maintenance Mode in"
+msgstr "Vous pouvez activer le mode maintenance dans"
+
+#: wploti_maintenance_redirect.php:1724
+msgid ""
+"You can allow users temporary access by sending them the access key. When a "
+"new key is created, a link to create the access key cookie will be emailed "
+"to the email address provided. Access can then be revoked either by "
+"disabling or deleting the key."
+msgstr ""
+"Vous pouvez autoriser un accès temporaire aux utilisateurs en leur envoyant "
+"la clé d’accès. Lorsqu’une nouvelle clé est créée, un lien pour créer le "
+"cookie de clé d'accès sera envoyé par e-mail à l’adresse e-mail fournie. "
+"L’accès peut alors être révoqué en désactivant ou en supprimant la clé."
+
+#: wploti_maintenance_redirect.php:1748
+msgid "You can write a brief message that will be displayed under animation :"
+msgstr "Vous pouvez écrire un bref message qui s’affichera sous l'animation :"
+
+#: wploti_maintenance_redirect.php:513
+msgid "You do not have access to this resource."
+msgstr "Vous n’avez pas accès à cette ressource."
+
+#: wploti_maintenance_redirect.php:1363
+msgid "You must enter a Name"
+msgstr "Vous devez saisir un Nom"
+
+#: wploti_maintenance_redirect.php:1484
+msgid "You must enter an Email"
+msgstr "Vous devez saisir un email"
+
+#: wploti_maintenance_redirect.php:1363
+msgid "You must enter an IP"
+msgstr "Vous devez saisir une adresse IP"
+
+#: wploti_maintenance_redirect.php:1714
+msgid "Your Class C is:"
+msgstr "Votre classe C est :"
+
+#: wploti_maintenance_redirect.php:1714
+msgid "Your IP address is:"
+msgstr "Votre adresse IP est :"
