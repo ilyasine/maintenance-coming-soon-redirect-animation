@@ -5,7 +5,7 @@ Tags: maintenance, animation, redirect, maintenance mode, admin, administration,
 Requires at least: 4.6
 Tested up to: 6.3
 Requires PHP: 5.4
-Stable tag: 2.1.2
+Stable tag: 2.1.1
 Donate link: https://www.paypal.me/yassineidrissi
 Text Domain: lottie-maintenance-mode-animation
 License: GPLv3

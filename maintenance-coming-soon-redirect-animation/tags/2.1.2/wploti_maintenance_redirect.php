@@ -686,6 +686,10 @@ if( !class_exists("wploti_maintenance_redirect") ) {
 
 			wp_enqueue_script( 'lottiplayer-script', $loti_script_src, array(), WPLOTI_VERSION, false );
 
+			/* wp_enqueue_style($handle, $src, $deps, $ver, $media);
+
+			wp_enqueue_script($handle, $src, $deps, $ver, $in_footer); */
+
 		}
 
 		/**

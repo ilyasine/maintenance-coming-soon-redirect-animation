@@ -1,0 +1,903 @@
+:root {
+  --border-rd: 3px;
+  --violet-primary: #a737d5;
+  --orange-primary: #ff7900;
+  --violet-hover: #d037ea;
+}
+
+.wploti_settings_page input[type=radio]:checked::before {
+  background-color: var(--violet-primary);
+}
+
+.wploti_settings_page a,
+#wploti_enabled_notice a {
+  color: var(--violet-primary);
+}
+
+.wploti_settings_page a:hover,
+.wploti_settings_page a:hover:before {
+  color: var(--violet-hover);
+}
+
+.wploti_settings_page #wpcontent .wp-person a:focus .gravatar,
+.wploti_settings_page #wpcontent a:focus,
+.wploti_settings_page #wpcontent a:focus .media-icon img,
+.wploti_settings_page #wpcontent a:focus .plugin-icon {
+  color: rgb(167 55 213 / 0%);
+  outline: 1px solid transparent;
+  box-shadow: none;
+  text-shadow: 0px 1px 0px rgb(167 55 213 / 88%), -2px 0px 3px rgb(167 55 213 / 49%), 0px 1px 3px rgb(167 55 213 / 86%);
+  font-weight: 700;
+}
+
+ul li::marker {
+  color: var(--orange-primary);
+}
+
+.wploti_settings_page input[type=checkbox]:focus,
+.wploti_settings_page input[type=color]:focus,
+.wploti_settings_page input[type=date]:focus,
+.wploti_settings_page input[type=datetime-local]:focus,
+.wploti_settings_page input[type=datetime]:focus,
+.wploti_settings_page input[type=email]:focus,
+.wploti_settings_page input[type=month]:focus,
+.wploti_settings_page input[type=number]:focus,
+.wploti_settings_page input[type=password]:focus,
+.wploti_settings_page input[type=radio]:focus,
+.wploti_settings_page input[type=search]:focus,
+.wploti_settings_page input[type=tel]:focus,
+.wploti_settings_page input[type=text]:focus,
+.wploti_settings_page input[type=time]:focus,
+.wploti_settings_page input[type=url]:focus,
+.wploti_settings_page input[type=week]:focus,
+.wploti_settings_page select:focus,
+.wploti_settings_page textarea:focus {
+  border-color: var(--violet-primary);
+  box-shadow: 0 0 0 1px var(--violet-primary);
+  outline: 2px solid transparent;
+}
+
+.wploti_settings_page .button,
+.wploti_settings_page .button-secondary {
+  color: var(--violet-primary);
+  border-color: var(--violet-primary);
+  background: #f6f7f7;
+  vertical-align: top;
+}
+
+.wploti_settings_page input[type=email],
+.wploti_settings_page input[type=number],
+.wploti_settings_page input[type=password],
+.wploti_settings_page input[type=search],
+.wploti_settings_page input[type=tel],
+.wploti_settings_page input[type=text],
+.wploti_settings_page input[type=url] {
+  border: none;
+  box-shadow: none;
+  border-bottom: 1px solid #c3c4c7;
+  border-radius: 1px;
+}
+
+.wploti_settings_page .button-secondary:hover,
+.wploti_settings_page .button.hover,
+.wploti_settings_page .button:hover {
+  background: #f0f0f1;
+  border-color: var(--violet-hover);
+  color: var(--violet-hover);
+}
+
+.wploti_settings_page .button-secondary:focus,
+.wploti_settings_page .button.focus,
+.wploti_settings_page .button:focus {
+  background: #f6f7f7;
+  border-color: var(--violet-hover);
+  color: var(--violet-hover);
+  box-shadow: 0 0 0 1px var(--violet-hover);
+  outline: 2px solid transparent;
+  outline-offset: 0;
+}
+
+@font-face {
+  font-family: 'Nunito';
+  src: url('../fonts/Nunito-Regular.eot');
+  src: local('Nunito Regular'), local('Nunito-Regular'),
+    url('../fonts/Nunito-Regular.eot') format('embedded-opentype'),
+    url('../fonts/Nunito-Regular.woff2') format('woff2'),
+    url('../fonts/Nunito-Regular.woff') format('woff'),
+    url('../fonts/Nunito-Regular.ttf') format('truetype'),
+    url('../fonts/Nunito-Regular.svg#Nunito-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.wploti_settings_page #wpbody-content {
+  font-family: 'Nunito';
+}
+
+.wploti_settings_page #wpadminbar .animation-state {
+  margin-right: 8px;
+  width: 100%;
+}
+
+.wploti_settings_page .wploti-head {
+  display: flex;
+  align-items: center;
+}
+
+.wploti_settings_page .animation-state {
+  width: 36px;
+}
+
+#wploti_enabled_notice {
+  border-left-color: var(--violet-primary);
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  width: calc(100% - 22px);
+  border-radius: 5px;
+  margin: 15px 0 0;
+  margin: 15px 20px 0 2px;
+  position: relative;
+}
+
+.wploti-activation-dismiss,
+.wploti_settings_page .wploti-note-dismiss {
+  position: relative;
+  text-decoration: none;
+  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.wploti-dismiss {
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+}
+
+.wploti-leave-feedback>div {
+  margin: 13px 10px;
+}
+
+.wploti-activation-dismiss:before,
+.wploti-note-dismiss:before {
+  transition: all .1s ease-in-out;
+  content: '\f335';
+  color: var(--violet-primary);
+  font: normal 20px dashicons;
+}
+
+#wploti_text_message .button.wploti_save {
+  transition: all .1s ease-in-out;
+  float: right;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#wploti_text_message .button.wploti_save:before {
+  transition: all .1s ease-in-out;
+  content: "\f147";
+  color: var(--violet-primary);
+  font: normal 20px dashicons;
+}
+
+#wploti_text_message .button.wploti_save:hover:before,
+#wploti_text_message .button.wploti_save:focus:before {
+  color: var(--violet-hover);
+}
+
+#wploti_enabled_notice .notice-activation-text-wrapper {
+  width: 100%;
+  margin-bottom: 2em;
+}
+
+.wploti-notice {
+  background: #fff;
+  border: 1px solid #c3c4c7;
+  border-left-width: 4px;
+  box-shadow: 0 1px 1px rgb(0 0 0 / 4%);
+  margin: 5px 15px 2px;
+  padding: 1px 12px;
+}
+
+.wploti_settings_page .wrap>.wploti_settings_page h1.big-title {
+  display: block !important;
+}
+
+#wploti_enabled_notice lottie-player.wploti_animation {
+  width: 200px;
+}
+
+/* Animations Container */
+.wploti_settings_page .animations {
+  display: flex;
+  grid-gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.wploti_settings_page .animation-grid {
+  cursor: pointer;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  flex-basis: calc(25% - 15px);
+}
+
+.wploti_settings_page #lottiecontainer {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wploti_settings_page .selected-animation {
+  display: flex;
+  width: 50%;
+  margin: 1rem auto;
+  box-shadow: inset 0 0 20px rgb(206 206 206);
+  border-radius: 5px;
+  max-width: 400px;
+  height: fit-content;
+}
+
+.wploti_settings_page .select-bg,
+.wploti_settings_page .selected-bg {
+  z-index: 1;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: var(--violet-primary)24;
+  cursor: auto;
+}
+
+.wploti_settings_page .selected-bg {
+  z-index: 1000;
+}
+
+.wploti_settings_page .select-bg {
+  opacity: 0;
+  transition: .3s ease-in-out;
+}
+
+.wploti_settings_page .animation-grid:hover .select-bg {
+  opacity: 1;
+}
+
+.wploti_settings_page .selected-bg+.select-bg {
+  background: transparent;
+}
+
+.wploti_settings_page .select-btn,
+.wploti_settings_page .selected-btn {
+  background: var(--violet-primary);
+  width: 100px;
+  text-align: center;
+  color: #ffffff;
+  padding: 3px 10px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.wploti_settings_page .button-primary.focus,
+.wploti_settings_page .button-primary.hover,
+.wploti_settings_page .button-primary:focus,
+.wploti_settings_page .button-primary:hover {
+  background: var(--violet-hover);
+  border-color: var(--violet-hover);
+  color: #fff;
+}
+
+.wploti_settings_page .button-primary {
+  background: var(--violet-primary);
+  border-color: var(--violet-primary);
+  color: #fff;
+}
+
+.wploti_settings_page .selected-btn {
+  cursor: default !important;
+  color: var(--violet-primary) !important;
+  border-color: var(--violet-primary) !important;
+  background: #ffffff !important;
+}
+
+.wploti_settings_page .big-title {
+  font-family: 'Nunito', sans-serif;
+}
+
+.wploti_settings_page .small-title {
+  font-family: 'Nunito', sans-serif;
+}
+
+.wploti_settings_page #wploti_method_message {
+  margin-top: 1rem;
+}
+
+.wploti_settings_page .bold-title {
+  font-weight: bold;
+  color: black;
+  margin-right: 5px;
+}
+
+.wploti_settings_page #wploti_note_notice {
+  display: inline-flex;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #c3c4c7;
+  border-left-width: 4px;
+  box-shadow: 0 1px 1px rgb(0 0 0 / 4%);
+  padding: 1px 12px;
+  border-left-color: var(--violet-primary);
+  border-radius: 5px;
+}
+
+.wploti_settings_page .note_head {
+  display: flex;
+  align-items: center;
+}
+
+.wploti_settings_page .note_head .alert-icon {
+  width: 38px;
+  margin: 0;
+}
+
+.wploti_settings_page ul.note_text {
+  list-style-type: disclosure-closed;
+  padding-left: 16px;
+}
+
+.wploti_settings_page ::selection {
+  background: var(--violet-primary);
+  color: #ffffff;
+}
+
+.wploti_settings_page input {
+  max-width: 100%;
+}
+
+/*  .wploti_settings_page input[type=text]{
+      border: 1px solid var(--violet-primary);
+  } */
+.wploti_settings_page input[type=text]:focus {
+  border-color: var(--violet-primary);
+  box-shadow: 0 1px 0 0 var(--violet-primary);
+}
+
+.wploti_settings_page input[type=text]:focus::placeholder {
+  color: #a737d5;
+}
+
+.wploti_settings_page .enable-maintenance-mode {
+  margin-bottom: 2em;
+}
+
+.wploti_settings_page .wploti_mr_admin_section {
+  padding: 1rem;
+  padding-top: 0px;
+}
+
+.wploti_settings_page table.widefat {
+  border: 1px solid #c3c4c7;
+  box-shadow: 0 1px 1px rgb(0 0 0 / 4%);
+  border-radius: 5px;
+}
+
+.wploti_settings_page .wploti_mr_disabled_field {
+  color: #888;
+}
+
+.wploti_settings_page .wploti_mr_small_dim {
+  font-size: 11px;
+  font-weight: normal;
+  color: #444;
+}
+
+.wploti_settings_page .wploti_mr_admin_section dt {
+  font-weight: bold;
+}
+
+.wploti_settings_page .wploti_mr_admin_section dd {
+  margin-left: 0;
+}
+
+.wploti_settings_page #load-animations-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+
+.wploti_settings_page #load-animations-message .button {
+  cursor: default;
+}
+
+/* Dialog box */
+.wploti_settings_page .modal {
+  position: fixed;
+  inset: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.55);
+  direction: ltr;
+}
+
+.wploti_settings_page .modal-content {
+  display: flex;
+  flex-direction: column;
+  max-width: 50ch;
+  max-height: 600px;
+  position: relative;
+  border-radius: 20px;
+  background: rgb(255, 255, 255);
+  box-shadow: 0 0 15px rgb(0 0 0 / 25%);
+}
+
+.wploti_settings_page .modal-header {
+  border-radius: 12px 12px 0px 0px;
+  display: flex;
+}
+
+.btn-close {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  top: -16px;
+  right: -14px;
+  cursor: pointer;
+}
+
+.wploti_settings_page .alert-icon {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  max-width: 60px;
+  margin: 10px auto;
+  animation: zigzag 1s infinite linear;
+}
+
+.wploti_settings_page .modal .messages {
+  text-align: center;
+}
+
+.wploti_settings_page .messages div {
+  padding: 0px 16px;
+  color: #1d2327;
+  font-size: 1.1em;
+}
+
+.wploti_settings_page .messages div:first-child {
+  margin-bottom: 10px;
+}
+
+.wploti_settings_page .modal-footer {
+  min-height: 42px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 30px;
+  border-radius: 0px 0px 12px 12px;
+  z-index: 1;
+}
+
+@keyframes zigzag {
+  0% {
+    transform: scale(1);
+  }
+
+  25% {
+    transform: scale(0.9);
+  }
+
+  50% {
+    transform: translateX(1);
+  }
+
+  100% {
+    transform: translateX(1.1);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .wploti_settings_page #wploti_enabled_notice {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .wploti_settings_page .animation-grid {
+    flex-basis: calc(33.33% - 15px);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .wploti_settings_page .animation-grid {
+    flex-basis: calc(50% - 15px);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .wploti_settings_page .animation-grid {
+    flex-basis: calc(100% - 15px);
+  }
+
+  .wploti_settings_page .selected-animation {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .wploti_settings_page .animation-grid {
+    flex-basis: calc(20% - 15px);
+  }
+}
+
+/* toggle */
+.wploti_settings_page .wploti-maintenance-toggle .toggle,
+.wploti_settings_page .wploti-maintenance-toggle .toggle-wrapper {
+  display: inline-block;
+}
+
+.wploti_settings_page .wploti-maintenance-toggle .toggle {
+  position: relative;
+  width: 340px;
+  height: 50px;
+  font-weight: 600;
+  background: 0 0;
+  border: 1px solid #ddd;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  border-radius: 6em;
+  background: #f6f7f7;
+}
+
+.wploti_settings_page .wploti-maintenance-toggle .toggle:after,
+.wploti_settings_page .wploti-maintenance-toggle .toggle:before {
+  position: absolute;
+  line-height: 50px;
+  font-size: 1em;
+  z-index: 2;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out
+}
+
+.wploti_settings_page .wploti-maintenance-toggle input[type=checkbox].toggle-checkbox {
+  display: none
+}
+
+.wploti_settings_page .wploti-maintenance-toggle .toggle_handler {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  background: #f63739;
+  width: 170px;
+  height: 44px;
+  top: 3px;
+  left: 5px;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+  border-radius: 6em;
+}
+
+.wploti_settings_page .wploti-maintenance-toggle .toggle-checkbox:checked+.toggle .toggle_handler {
+  -webkit-transform: translateX(160px);
+  -ms-transform: translateX(160px);
+  transform: translateX(160px);
+  background: #00a32a;
+}
+
+span.green {
+  background: #00a32a;
+  color: white;
+  border-radius: 3px;
+  padding: 5px 12px;
+}
+
+span.red {
+  background: #f63739;
+  color: white;
+  border-radius: 3px;
+  padding: 5px 12px;
+}
+
+.wploti_settings_page .wploti-maintenance-toggle .toggle:before {
+  left: 63px;
+  color: #fff
+}
+
+.wploti_settings_page .wploti-maintenance-toggle .toggle-checkbox:checked+.toggle:before,
+.wploti_settings_page .wploti-maintenance-toggle .toggle:after {
+  color: #919191;
+}
+
+.wploti_settings_page .wploti-maintenance-toggle .toggle:after {
+  right: 68px;
+}
+
+.wploti_settings_page .wploti-maintenance-toggle .toggle-checkbox:checked+.toggle:after {
+  color: #fff;
+}
+
+/* tab style */
+
+#toplevel_page_wploti-settings .wp-submenu li.current a,
+#toplevel_page_wploti-settings .wp-submenu li.current a:focus,
+#toplevel_page_wploti-settings .wp-submenu li.current a:hover,
+#toplevel_page_wploti-settings a.wp-has-current-submenu:focus+.wp-submenu li.current a {
+  color: #fff;
+}
+
+
+/* tabs */
+
+.wploti_settings_page .ui-tabs {
+  max-width: 1200px;
+  width: 100%;
+  position: relative;
+  padding: 0px;
+  zoom: 1;
+  margin-top: 20px;
+}
+
+/* position: relative prevents IE scroll bug (element with position: relative inside container with overflow: auto appear as "fixed") */
+
+.wploti_settings_page .ui-tabs .ui-tabs-nav {
+  margin: 0;
+  padding: 0;
+}
+
+.wploti_settings_page .ui-tabs .ui-tabs-nav li {
+  list-style: none;
+  position: relative;
+  top: 1px;
+  margin: 0 0.2em 1px 0;
+  border-bottom: 0 !important;
+  padding: 0;
+  white-space: nowrap;
+}
+
+.wploti_settings_page .ui-tabs .ui-tabs-nav li a {
+  text-decoration: none;
+}
+
+.wploti_settings_page .ui-tabs .ui-tabs-nav li.ui-tabs-selected {
+  margin-bottom: 0;
+  border-bottom: 1px solid #f1f1f1 !important;
+}
+
+.wploti_settings_page ul.ui-tabs-nav.wploti-main-tab li.ui-state-active {
+  border-top: 3px solid var(--orange-primary);
+  background: #ffffff;
+  margin-bottom: 0px;
+  padding-bottom: 1px;
+  border-radius: 3px 3px 0 0;
+}
+
+.wploti_settings_page .ui-tabs .ui-tabs-nav li.ui-tabs-selected a,
+.wploti_settings_page .ui-tabs .ui-tabs-nav li.ui-state-disabled a,
+.wploti_settings_page .ui-tabs .ui-tabs-nav li.ui-state-processing a {
+  cursor: text;
+}
+
+.wploti_settings_page .ui-tabs .ui-tabs-nav li a,
+.wploti_settings_page .ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a {
+  cursor: pointer;
+}
+
+/* first selector in group seems obsolete, but required to overcome bug in Opera applying cursor: text overall if defined elsewhere... */
+.wploti_settings_page .ui-tabs .ui-tabs-panel {
+  display: block;
+  border-width: 0;
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 0 5px 5px 5px;
+}
+
+.wploti_settings_page .ui-tabs .ui-tabs-hide {
+  display: none !important;
+}
+
+.wploti_settings_page #wpcontent .ui-tabs .ui-tabs-nav li a {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 32px;
+  color: #919191;
+  padding: 10px 20px;
+  display: block;
+  letter-spacing: 1px;
+  text-shadow: none;
+}
+
+.wploti_settings_page .ui-tabs ul.ui-tabs-nav li.ui-state-active .icon {
+  color: var(--orange-primary);
+}
+
+.wploti_settings_page .ui-tabs-nav:after {
+  content: '';
+  clear: both;
+  display: block;
+}
+
+.wploti_settings_page .ui-tabs-anchor,
+.nav-tab {
+  outline: none !important;
+}
+
+.wploti_settings_page .ui-tabs ul.ui-tabs-nav li {
+  border: none;
+  color: #aaaaaa;
+  display: inline-block;
+  font-size: 12px;
+  line-height: 16px;
+  margin: 5px 5px 1px 5px;
+  text-decoration: none;
+  text-shadow: none;
+  background: rgba(255, 255, 255, 0.61);
+  padding: 0;
+  text-align: center;
+  letter-spacing: 0.5px;
+  min-width: 105px;
+  border: 1px solid #ddd;
+  background: #f6f7f7;
+  border-radius: 5px 5px 0 0;
+}
+
+.wploti_settings_page .ui-tabs ul.ui-tabs-nav li .label {
+  display: block;
+  margin-top: -10px;
+}
+
+.wploti_settings_page .ui-tabs ul.ui-tabs-nav li:first-child {
+  margin-left: 0;
+}
+
+.wploti_settings_page ul.ui-tabs-nav.wploti-main-tab {
+  padding-bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+  border-bottom: 0px !important;
+}
+
+.wploti_settings_page .ui-state-hover a,
+.wploti_settings_page .ui-state-active a,
+.wploti_settings_page li.ui-state-hover,
+.wploti_settings_page li.ui-state-hover a {
+  color: #000000 !important;
+}
+
+.wploti_settings_page li.ui-state-hover {
+  background-color: #ffffff !important;
+}
+
+.wploti_settings_page .ui-tabs-nav a:focus {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+@media screen and (max-width: 782px) {
+  .wploti_settings_page .ui-tabs ul.ui-tabs-nav li .label {
+    display: none;
+  }
+
+  .wploti_settings_page .ui-tabs .ui-tabs-nav li a {
+    padding: 8px 15px 0px 14px;
+  }
+
+  .wploti_settings_page .ui-tabs ul.ui-tabs-nav li {
+    margin: 5px 2px -5px 2px;
+    min-width: inherit;
+  }
+
+  #wploti_enabled_notice .notice-activation-text-wrapper {
+    margin-bottom: 4em;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .wploti_settings_page .ui-tabs .ui-tabs-nav li a {
+    padding: 10px 15px 10px 15px;
+  }
+
+  .wploti_settings_page .ui-tabs ul.ui-tabs-nav li {
+    min-width: inherit;
+  }
+}
+
+#wploti_tabs li span.dashicons-star-filled {
+  color: #ffc107;
+}
+
+.wploti-tab-content {
+  max-width: 1050px;
+}
+
+.wploti_settings_page .wploti-tabs-2nd-level {
+  margin: 0;
+}
+
+.wploti_settings_page .wploti-tabs-2nd-level ul.ui-tabs-nav li a {
+  padding: 0 5px;
+  margin: 0 0 -1px 0;
+  font-size: 1.3em;
+  font-weight: 600;
+  border-bottom: 2px solid transparent;
+}
+
+.wploti_settings_page .wploti-tabs-2nd-level ul.ui-tabs-nav li {
+  margin: 0 10px 1px 10px;
+  min-width: initial;
+}
+
+.wploti_settings_page .wploti-tabs-2nd-level ul.ui-tabs-nav {
+  border-bottom: 1px solid #dddddd;
+}
+
+s.wploti_settings_page .wploti-tabs-2nd-level li.ui-state-active a:before {
+  display: inline-block;
+  content: ' ';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #23282d;
+  bottom: 0;
+}
+
+.wploti_settings_page .wploti-tabs-2nd-level ul.ui-tabs-nav li.ui-state-active a {
+  border-bottom: 2px solid black;
+}
+
+.wploti_settings_page input[type=checkbox]:checked::before {
+  filter: hue-rotate(76deg) saturate(1.2);
+  -webkit-filter: hue-rotate(76deg) saturate(1.2);
+}
+
+/* extra tab */
+.wploti_settings_page .wploti-tab-content tr.description td {
+  padding-top: 0;
+  padding-left: 0;
+}
+
+/* select2 */
+
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+  background-color: var(--orange-primary) !important;
+}
+
+#wploti_whitelisted_users+.select2-container .select2-search__field:not([placeholder='']) {
+  width: 100% !important;
+  margin-right: 100000px;
+}
+
+#wploti_whitelisted_users+.select2-container {
+  max-width: 300px;
+}
+
+#wploti_whitelisted_users+.select2-container input:focus {
+  box-shadow: none;
+}
+
+#wploti_whitelisted_users+.select2-container--default .select2-selection--multiple {
+  border: 1px solid #dddddd;
+  padding: 6px 0 0 10px;
+}
+
+/* tabs */

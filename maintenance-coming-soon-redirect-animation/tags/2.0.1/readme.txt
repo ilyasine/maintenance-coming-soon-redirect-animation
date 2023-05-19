@@ -5,7 +5,7 @@ Tags: maintenance, animation, redirect, maintenance mode, admin, administration,
 Requires at least: 4.6
 Tested up to: 6.3
 Requires PHP: 5.4
-Stable tag: 2.1.2
+Stable tag: 2.0.1
 Donate link: https://www.paypal.me/yassineidrissi
 Text Domain: lottie-maintenance-mode-animation
 License: GPLv3
@@ -26,9 +26,9 @@ A list of IP addresses can be set up to completely bypass maintenance mode. This
 
 Access keys work by creating a key on the user’s computer that will be checked against when maintenance mode is active. When a new key is created, a link to create the access key cookie will be emailed to the email address provided. Access can then be revoked either by disabling or deleting the key.
 
-Whitelisted User Roles – user roles who see the site, instead of under maintenance page
+Whitelisted User Roles – user roles who see the site, instead of under maintenance mode page
 
-Whitelisted Users – users who see the site, instead of maintenance page
+Whitelisted Users – users who see the site, instead of under construction page
  
 **`Animations :`**
 
@@ -41,7 +41,7 @@ You can either choose your animation from the library or upload your own; this a
 ✔ All settings are auto-updated , you don't need to save anything .
 
 
-= WP-CLI Commands : =
+= **` WP-CLI Commands :`** =
 
 Note : before you begin run these commands make sure you have wp-cli installed on your server and your are in your WordPress site Root folder
 

@@ -1,0 +1,18 @@
+= 1.1.1 =
+* First Final release. No Changes Yet.
+
+= 1.1.2 =
+* Fix Maintenance Status not showing in Top admin bar front
+
+= 2.0.0 =
+* Redesign Ui to tabs style
+* New font added as primary font
+* Fixed some styles issues on large screens
+* Changed plugin icons
+* Added feature : Whitelisted User Roles – user roles who see the site
+* Added feature : Whitelisted Users – users who see the site
+* Added feature : Administrator can upload & use his own JSON or gif Animation
+* Added notice in login screen if Maintenance Mode is enabled.
+* Added submenus
+* Replace message input with wyswyg Editor
+* New Added headers
