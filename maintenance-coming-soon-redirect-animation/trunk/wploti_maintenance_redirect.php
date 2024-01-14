@@ -179,7 +179,7 @@ if( !class_exists("wploti_maintenance_redirect") ) {
 
 			if ($wploti_current_screen->base === "toplevel_page_wploti-settings") 
 			
-				$classes .= 'wploti_settings_page';
+				$classes .= ' wploti_settings_page';
 								
 			return $classes;
 		}
