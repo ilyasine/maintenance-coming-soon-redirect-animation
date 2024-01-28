@@ -3,7 +3,7 @@ Contributors: yasinedr
 Author URI: https://profiles.wordpress.org/yasinedr/
 Tags: maintenance, animation, redirect, maintenance mode, admin, administration, unavailable, coming soon, landing page, under construction, contact form, subscribe, countdown
 Requires at least: 4.6
-Tested up to: 6.4.2
+Tested up to: 6.6
 Requires PHP: 5.4
 Stable tag: 2.1.3
 Donate link: https://www.paypal.me/yassineidrissi
