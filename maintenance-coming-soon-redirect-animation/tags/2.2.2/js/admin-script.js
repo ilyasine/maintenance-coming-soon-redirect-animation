@@ -295,12 +295,12 @@ jQuery(document).ready(function ($) {
         .attr("data-security", wploti_var.wploti_nonce)
         .attr("id", "wploti_message")
         .attr("name", "wploti_message")
-        .text(wploti_var.save_content)
+        .text(wploti_translate.save_content)
         .addClass("button wploti_save")
     )   
 
     // init select2
-    $('#wploti_whitelisted_users').select2({ 'placeholder': wploti_var.wploti_whitelisted_users_placeholder });
+    $('#wploti_whitelisted_users').select2({ 'placeholder': wploti_translate.wploti_whitelisted_users_placeholder });
 
     /**
      * add whitelisted users to databse on select
@@ -309,14 +309,12 @@ jQuery(document).ready(function ($) {
     $('#wploti_whitelisted_users').on('select2:select', function (e) {
 
         var user_id = e.params.data.id;
-        var security = $(this).data('security');
 
         $.ajax({
             url: ajaxurl,
             data: {
                 action: 'wploti_add_whitelisted_users',
                 user_id: user_id,
-                security: security,
             },
             type: 'post',
             success: function (result, textstatus) {
@@ -336,19 +334,17 @@ jQuery(document).ready(function ($) {
     });
 
     /**
-     * remove whitelisted users to databse on select
+     * add whitelisted users to databse on select
      */
     
     $('#wploti_whitelisted_users').on('select2:unselect', function (e) {
         var user_id = e.params.data.id;
-        var security = $(this).data('security');
        
         $.ajax({
             url: ajaxurl,
             data: {
                 action: 'wploti_remove_whitelisted_users',
                 user_id: user_id,
-                security: security,
             },
             type: 'post',
             success: function (result, textstatus) {
@@ -369,8 +365,6 @@ jQuery(document).ready(function ($) {
     
     $('button.wploti_save').on('click', function () {
 
-        $(this).text(wploti_var.saved_content);
-
         var message = get_tinymce_content();
         var security = $(this).data('security');
 
@@ -386,6 +380,8 @@ jQuery(document).ready(function ($) {
                /*  console.log(result);
                 console.log('sucess'); */
 
+                $('button.wploti_save').text(wploti_translate.saved_content);
+
                 $(".updated").fadeIn(1000).delay(7000).fadeOut("slow");
             },
             error: function (result) {
@@ -395,9 +391,7 @@ jQuery(document).ready(function ($) {
         })
         
         setTimeout(() => {
-            $(this).text(wploti_var.save_content)
-           /*  wploti_var.refresh_active = false;
-            console.log(wploti_var.refresh_active); */
+            $(this).text(wploti_translate.save_content)
         }, 5000);
     })
     
@@ -478,8 +472,6 @@ jQuery(document).ready(function ($) {
             url: ajaxurl,
             data: {
                 action: 'wploti_animation_ajax_load',
-                payload: 'load_animations_payload',
-                security: wploti_var.wploti_nonce,
                 start: start,
                 limit: limit,
             },
@@ -491,7 +483,7 @@ jQuery(document).ready(function ($) {
                     $('#load-animations-message').html("");
                     action = 'active';
                 } else {
-                    $('#load-animations-message').html("<button type='button' class='button button-secondary'>" + wploti_var.pls_wait + "....</button>");
+                    $('#load-animations-message').html("<button type='button' class='button button-secondary'>" + wploti_translate.pls_wait + "....</button>");
                     action = "inactive"; // user action has been completed
                 }
             },
@@ -526,13 +518,49 @@ jQuery(document).ready(function ($) {
     });
 
     /**
+     * LOGOUT ALL USERS
+     */
+
+    $('.wploti_logout_users').click(function () {
+        let logout_description = $('#logged_out_description');
+        var security = $(this).data('security');
+        $.ajax({
+            url: ajaxurl,
+            data: {
+                action: 'wploti_logout_users',
+                security: security,
+                payload: 'wploti_logout_users',
+            },
+            type: 'post',
+            success: function (result, textstatus) {
+               /*  console.log(result);
+
+                 console.log('sucess'); */
+                
+                logout_description.text(wploti_translate.logged_out_success);
+                
+                setTimeout(() => {
+                    logout_description.text(wploti_translate.logged_out_description);
+                }, 5000);
+              
+                $(".updated").fadeIn(1000).delay(7000).fadeOut("slow");
+            },
+            error: function (result) {
+                /* console.log(result);
+
+                 console.log('fail');*/
+            },
+        })
+    })
+
+    /**
      * RESET SETTINGS
      */
 
     $('.wploti_reset_settings').click(function () {
         var security = $(this).data('security');
         wploti_confirm.open({
-            message: wploti_var.be_careful + ' !<br><br>' + wploti_var.option_reset_txt,
+            message: wploti_translate.be_careful + ' !<br><br>' + wploti_translate.option_reset_txt,
             onok: () => {
                 $.ajax({
                     url: ajaxurl,

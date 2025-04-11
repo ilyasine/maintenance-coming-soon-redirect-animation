@@ -1,26 +1,26 @@
 === Maintenance & Coming Soon Redirect Animation ===
-Contributors: ilyasine , yasinedr
-Author URI: https://profiles.wordpress.org/ilyasine/
-Tags: maintenance, coming soon, animation, redirect, under construction
+Contributors: yasinedr
+Author URI: https://profiles.wordpress.org/yasinedr/
+Tags: maintenance, animation, redirect, maintenance mode, admin, administration, unavailable, coming soon, landing page, under construction, contact form, subscribe, countdown
 Requires at least: 4.6
-Tested up to: 6.7.2
+Tested up to: 6.5.2
 Requires PHP: 5.4
-Stable tag: 2.3.0
+Stable tag: 2.1.3
 Donate link: https://www.paypal.me/yassineidrissi
-Text Domain: maintenance-coming-soon-redirect-animation
+Text Domain: lottie-maintenance-mode-animation
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
-Enable maintenance mode in one click with stunning animations and customizable access for specific users.
+Make your website under maintenance in seconds with great looking animations and configure settings to allow specific users to bypass the maintenance mode .
 
 == Description ==
-This super lightweight plugin is intended primarily for developers, designers and site administrators that need to allow clients to preview the site before being available to the public or to temporarily hide it while undergoing major updates.
+This super lightweight plugin is intended primarily for developers , designers and site administrators that need to allow clients to preview site before being available to the general public or to temporarily hide it while undergoing major updates.
 
-Any logged-in user with WordPress administrator privileges will be allowed to view the site regardless of the settings in the plugin. The exact privilege can be set using a filter hook - see FAQs.
+Any logged in user with WordPress administrator privileges will be allowed to view the site regardless of the settings in the plugin. The exact privilege can be set using a filter hook - see FAQs.
 
-The behaviour of this can be enabled or disabled at any time without losing any of the settings configured in its settings pane. However, deactivating the plugin is recommended versus having it activated while disabled.
+The behaviour of this can be enabled or disabled at any time without losing any of settings configured in its settings pane. However, deactivating the plugin is recommended versus having it activated while disabled.
 
-When redirect is enabled, it can send a different header types.
+When redirect is enabled it can send a different header types.
 
 A list of IP addresses can be set up to completely bypass maintenance mode. This option is useful when needing to allow a client’s entire office to access the site while in maintenance mode without needing to maintain individual access keys.
 
@@ -141,15 +141,8 @@ This filter is used to pass a different WordPress capability to check if the log
 * Fix Gif animations
 * Update readme file
 
-= 2.3.0 =
-* Resolved critical security vulnerabilities to ensure a safer user experience.
-* Fixed potential exploits related to user access and IP whitelisting.
-* Enhanced plugin security by sanitizing and validating all user inputs.
-* Enhanced plugin security by restricting access to plugin settings for non-admin users.
-* Improved protection against unauthorized access to plugin settings.
-* Added feature: Logging system to track maintenance mode activations and deactivations.
-* Fixed issue: Animation uploader now properly validates file types and sizes.
-* Fixed issue: Improved compatibility with the latest WordPress versions.
-* Fixed issue: Resolved conflicts with other maintenance plugins.
-* Performance improvements: Reduced plugin load time and memory usage.
-* Documentation: Updated FAQs and installation instructions for clarity.
+= 2.1.3 =
+* New : Execute a complete log-out for all currently signed-in users with a single click
+* Remove unnecessary plugin font
+* Fix issues with ajax requests not working when maintenance mode is enabled
+* optimizing security and performance
