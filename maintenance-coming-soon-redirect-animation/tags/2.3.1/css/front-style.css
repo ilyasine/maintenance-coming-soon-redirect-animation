@@ -1,0 +1,42 @@
+html{
+    background: #ECE9E6;
+   /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);
+   /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFFFFF, #ECE9E6);
+   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+    text-align: center;
+    overflow: hidden;
+    gap: 2vh;
+    width: 75vw;
+    height: 75vh;
+    margin: 10vh auto;
+}
+.title{
+    color: #ffcd46;
+    font-family: cursive;
+}
+.title a{
+    text-decoration: none;
+    color: #89add3;
+}
+/* lottie-player{
+    width: 80%;
+}
+*/
+@media screen and (max-width : 800px){
+   /* lottie-player{
+        width: 90%;
+   }
+    */
+    body{
+        gap: 5vh;
+   }
+}
